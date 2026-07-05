@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debt-to-Income (DTI) Ratio Calculator 2026 | FincalMax</title>
+<meta name="description" content="Calculate your debt-to-income (DTI) ratio in seconds and see if you qualify for a mortgage. Free DTI calculator with front-end and back-end ratios.">
+<link rel="canonical" href="https://www.fincalmax.com/calculators/debt-to-income-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Debt-to-Income (DTI) Ratio Calculator 2026 | FincalMax">
+<meta property="og:description" content="Calculate your debt-to-income (DTI) ratio in seconds and see if you qualify for a mortgage. Free DTI calculator with front-end and back-end ratios.">
+<meta property="og:url" content="https://www.fincalmax.com/calculators/debt-to-income-calculator.html">
+<meta property="og:image" content="https://www.fincalmax.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Debt-to-Income (DTI) Ratio Calculator 2026 | FincalMax">
+<meta name="twitter:description" content="Calculate your debt-to-income (DTI) ratio in seconds and see if you qualify for a mortgage. Free DTI calculator with front-end and back-end ratios.">
+<meta name="twitter:image" content="https://www.fincalmax.com/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Debt-to-Income Ratio Calculator","url":"https://www.fincalmax.com/calculators/debt-to-income-calculator.html","description":"Calculate your front-end and back-end debt-to-income ratio for mortgage qualification.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"FincalMax","url":"https://www.fincalmax.com"}}</script>
+</head>
+<body>
+<header>
+  <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg></span><span class="logo-text">Fincal<span>Max</span></span></a>
+  <nav class="nav-links"><a href="index.html" class="active">Calculators</a><a href="../articles/index.html">Articles</a><a href="../pages/about.html">About</a><a href="../pages/contact.html">Contact</a></nav>
+  <div class="header-right">
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mm').classList.toggle('open')"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
+</header>
+<div class="mobile-menu" id="mm"><a href="../index.html">🏠 Home</a><a href="index.html">🧮 All Calculators</a><a href="../articles/index.html">📚 Articles</a></div>
+<div class="ad-strip"><div class="ad-block ad-728">Advertisement · 728×90</div></div>
+<div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="index.html">Calculators</a><span>›</span><span>Debt-to-Income Ratio Calculator</span></div>
+<div class="main">
+  <div class="two-col">
+    <div>
+      <div class="calc-wrap">
+        <div class="calc-header"><h1>💳 Debt-to-Income Calculator</h1><p>Free, instant and accurate results</p></div>
+        <div class="calc-body">
+          <div class="field-grid">
+            <div class="field"><label for="dtiInc">Monthly Gross Income</label><div class="input-wrap"><span class="prefix">$</span><input type="number" id="dtiInc" value="7500" min="0"></div></div>
+            <div class="field"><label for="dtiDebt">Other Monthly Debts</label><div class="input-wrap"><span class="prefix">$</span><input type="number" id="dtiDebt" value="600" min="0"></div></div>
+            <div class="field full"><label for="dtiHouse">Proposed Housing Payment (PITI)</label><div class="input-wrap"><span class="prefix">$</span><input type="number" id="dtiHouse" value="2200" min="0"></div></div>
+          </div>
+          <button class="calc-btn" onclick="calcResult()">Calculate Now</button>
+          <div class="results" id="results">
+            <div class="res-grid">
+              <div class="res-card primary"><div class="res-label">Back-End DTI</div><div class="res-val" id="r1">—</div></div>
+              <div class="res-card"><div class="res-label">Front-End DTI</div><div class="res-val" id="r2">—</div></div>
+              <div class="res-card"><div class="res-label">Status</div><div class="res-val" id="r3" style="font-size:1rem">—</div></div>
+            </div>
+            <div class="callout" style="margin-top:16px"><p id="dtiNote">📌 Most lenders prefer back-end DTI under 36%, and cap conventional loans around 43-45%.</p></div>
+          </div>
+        </div>
+      </div>
+            <div class="content-card" style="margin:0 0 20px;background:var(--blue-light);border:1px solid var(--border)">
+        <h2 style="font-size:1rem;margin-bottom:8px">📖 What These Results Mean</h2>
+        <p style="font-size:13.5px;line-height:1.7;color:var(--ink-2);margin:0">Lenders use your debt-to-income ratio (DTI) — your monthly debt payments divided by your gross monthly income — to decide how much they'll lend you. Enter your income, existing debts, and the housing payment you're considering. A DTI under 36% is considered excellent; most lenders cap conventional loans around 43-45%.</p>
+      </div>
+<div class="ad-center"><div class="ad-block ad-728">Advertisement · 728×90</div></div>
+      <div class="content-grid">
+        <div class="content-card"><h2>How It Works</h2><p>This calculator uses industry-standard formulas to give you accurate results instantly. All calculations happen in your browser — your data is never stored or shared.</p></div>
+        <div class="content-card"><h2>When to Use This</h2><p>Use this calculator when planning your home purchase, comparing loan options, or making any major real estate financial decision.</p></div>
+      </div>
+    </div>
+      <div class="ad-center"><div class="ad-block ad-728"><!-- AdSense slot: end-of-article 728x90 (or responsive) --> Advertisement · 728×90</div></div>
+    <div class="sidebar">
+      <div class="ad-center" style="padding:0"><div class="ad-block ad-300">Advertisement · 300×250</div></div>
+      <div class="card"><div class="card-title">🔗 Related Calculators</div>
+        <a href="mortgage-calculator.html" style="display:block;font-size:13px;color:var(--blue);text-decoration:none;margin-bottom:10px;font-weight:500">🏠 Mortgage Calculator</a>
+        <a href="refinance-calculator.html" style="display:block;font-size:13px;color:var(--blue);text-decoration:none;margin-bottom:10px;font-weight:500">🔄 Refinance Calculator</a>
+        <a href="affordability-calculator.html" style="display:block;font-size:13px;color:var(--blue);text-decoration:none;font-weight:500">💰 Affordability Calculator</a>
+      </div>
+      <div class="ad-center" style="padding:0"><div class="ad-block ad-300">Advertisement · 300×250</div></div>
+    </div>
+  </div>
+  <div class="ad-center"><div class="ad-block ad-728"><!-- AdSense slot: end-of-article 728x90 (or responsive size) --> Advertisement · 728×90</div></div>
+</div>
+<footer>
+  <div class="footer-main">
+    <div><span class="footer-brand"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:5px"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg>FincalMax</span><div class="footer-desc">Free, accurate calculators for real estate, finance, health and business.</div></div>
+    <div class="footer-col"><div class="footer-col-title">Calculators</div><a href="mortgage-calculator.html">Mortgage</a><a href="refinance-calculator.html">Refinance</a><a href="index.html">All Calculators</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="../pages/about.html">About</a><a href="../pages/privacy-policy.html">Privacy</a><a href="../pages/terms.html">Terms</a></div>
+    <div class="footer-col"><div class="footer-col-title">Legal</div><a href="../pages/privacy-policy.html">Privacy Policy</a><a href="../pages/terms.html">Terms</a><a href="../pages/disclaimer.html">Disclaimer</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 FincalMax.com · Not financial advice</span><div class="footer-links"><a href="../pages/privacy-policy.html">Privacy</a><a href="../pages/terms.html">Terms</a></div></div>
+</footer>
+<script>
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-US');
+function calcResult(){
+  const income=Math.max(parseFloat(document.getElementById('dtiInc').value)||0,0.01);
+  const debts=Math.max(parseFloat(document.getElementById('dtiDebt').value)||0,0);
+  const house=Math.max(parseFloat(document.getElementById('dtiHouse').value)||0,0);
+  const frontEnd=house/income*100;
+  const backEnd=(debts+house)/income*100;
+  document.getElementById('r1').textContent=backEnd.toFixed(1)+'%';
+  document.getElementById('r2').textContent=frontEnd.toFixed(1)+'%';
+  let status, note;
+  if(backEnd<=36){ status='✅ Excellent'; note='📌 A back-end DTI of '+backEnd.toFixed(1)+'% is well within the range most lenders prefer (under 36%).'; }
+  else if(backEnd<=43){ status='🟡 Acceptable'; note='📌 A back-end DTI of '+backEnd.toFixed(1)+'% is within range for most conventional loans (up to ~43-45%), but shop around — limits vary by lender.'; }
+  else { status='🔴 High Risk'; note='📌 A back-end DTI of '+backEnd.toFixed(1)+'% exceeds what most conventional lenders allow (~43-45%). You may need a lower payment, more income, or fewer debts to qualify.'; }
+  document.getElementById('r3').textContent=status;
+  document.getElementById('dtiNote').textContent=note;
+  document.getElementById('results').classList.add('show');
+}
+document.addEventListener('click',e=>{const m=document.getElementById('mm');if(m&&!m.contains(e.target)&&!e.target.closest('.hamburger'))m.classList.remove('open');});
+</script>
+</body>
+</html>

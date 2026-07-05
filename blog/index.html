@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — FincalMax</title>
+<meta name="description" content="Mortgage guides, real estate tips, and financial insights from FincalMax.">
+<link rel="canonical" href="https://www.fincalmax.com/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — FincalMax">
+<meta property="og:description" content="Mortgage guides, real estate tips, and financial insights from FincalMax.">
+<meta property="og:url" content="https://www.fincalmax.com/blog/">
+<meta property="og:image" content="https://www.fincalmax.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — FincalMax">
+<meta name="twitter:description" content="Mortgage guides, real estate tips, and financial insights from FincalMax.">
+<meta name="twitter:image" content="https://www.fincalmax.com/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══ RESET ══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ══ FINCALMAX OFFICIAL THEME ══ */
+:root{
+  /* Primary colors from FincalMax brand image */
+  --navy:#0d2d52;       /* dark navy blue */
+  --navy-2:#1a4a7a;     /* medium navy */
+  --navy-light:#e8f0fb; /* light navy tint */
+  --green:#2d8c3e;      /* FincalMax green */
+  --green-2:#3aad51;    /* lighter green */
+  --green-light:#e8f5eb;/* light green tint */
+  /* Neutrals */
+  --ink:#0a1628;
+  --ink-2:#2d4470;
+  --ink-3:#6b82a8;
+  --bg:#f4f7fb;
+  --surface:#ffffff;
+  --border:#d0dbed;
+  /* Shadows */
+  --shadow-sm:0 1px 3px rgba(13,45,82,.08),0 4px 12px rgba(13,45,82,.06);
+  --shadow:0 2px 8px rgba(13,45,82,.10),0 12px 32px rgba(13,45,82,.08);
+  --shadow-lg:0 4px 16px rgba(13,45,82,.14),0 24px 56px rgba(13,45,82,.12);
+  --r:14px;--r-sm:10px;--r-xs:6px;
+}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;overflow-x:hidden}
+
+/* ══ HEADER — FincalMax brand style ══ */
+header{
+  position:sticky;top:0;z-index:200;
+  background:#ffffff;
+  border-bottom:2px solid var(--navy);
+  height:66px;display:flex;align-items:center;padding:0 28px;gap:24px;
+  box-shadow:0 2px 12px rgba(13,45,82,.12);
+}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-mark{width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;border:2px solid var(--green)}
+.logo-text{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.logo-text span{color:var(--green)}
+.logo-sub{font-size:9px;font-weight:600;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;display:block;line-height:1;margin-top:2px}
+nav{display:flex;gap:4px;flex:1;margin-left:16px}
+nav a{font-size:13px;font-weight:600;color:var(--ink-2);text-decoration:none;padding:7px 13px;border-radius:var(--r-xs);transition:all .18s;white-space:nowrap}
+nav a:hover{background:var(--navy-light);color:var(--navy)}
+nav a.active{background:var(--navy);color:#fff}
+.nav-cta{background:var(--green)!important;color:#fff!important;border-radius:var(--r-xs)!important}
+.nav-cta:hover{background:var(--green-2)!important}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;color:var(--navy)}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:2px solid var(--navy);padding:12px;z-index:199;flex-direction:column;gap:3px;box-shadow:var(--shadow)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{padding:11px 14px;border-radius:var(--r-xs);font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;display:block}
+.mobile-menu a:hover{background:var(--navy-light);color:var(--navy)}
+
+/* ══ AD SLOT ══ */
+.ad-slot{display:flex;align-items:center;justify-content:center;padding:10px 0;background:#fff;border-bottom:1px solid var(--border)}
+.ad-block{background:#f1f5f9;border:1.5px dashed #b0bec5;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;color:#90a4ae;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;width:728px;height:90px;max-width:calc(100vw - 32px)}
+
+/* ══ BREADCRUMB ══ */
+.breadcrumb{max-width:1160px;margin:0 auto;padding:12px 24px 0;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-3)}
+.breadcrumb a{color:var(--navy);text-decoration:none;font-weight:500}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* ══ MAIN ══ */
+.main{max-width:1160px;margin:0 auto;padding:28px 24px 80px}
+
+/* ══ BLOG HERO — navy gradient like FincalMax header ══ */
+.blog-hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#1e5c99 100%);
+  border-radius:var(--r);padding:36px 40px;margin-bottom:28px;
+  position:relative;overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.blog-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;background:radial-gradient(circle,rgba(58,173,81,.25) 0%,transparent 70%);pointer-events:none}
+.blog-hero::after{content:'';position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;background:radial-gradient(circle,rgba(255,255,255,.06) 0%,transparent 70%);pointer-events:none}
+.blog-hero-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;position:relative}
+.blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.8vw,2rem);color:#fff;margin-bottom:6px}
+.blog-hero p{color:rgba(255,255,255,.6);font-size:13px;font-weight:400}
+.post-count-badge{background:rgba(58,173,81,.25);border:1.5px solid rgba(58,173,81,.5);color:#fff;font-size:13px;font-weight:600;padding:7px 18px;border-radius:100px}
+
+/* ══ FILTERS ══ */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+.filter-btn{padding:7px 16px;border:1.5px solid var(--border);border-radius:100px;background:#fff;color:var(--ink-2);font-size:12px;font-weight:600;cursor:pointer;transition:all .18s;font-family:'Outfit',sans-serif}
+.filter-btn:hover{border-color:var(--navy);color:var(--navy);background:var(--navy-light)}
+.filter-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.search-wrap{margin-left:auto;display:flex;align-items:center;border:1.5px solid var(--border);border-radius:100px;overflow:hidden;background:#fff;box-shadow:var(--shadow-sm)}
+.search-wrap input{border:none;outline:none;padding:7px 16px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);background:transparent;width:175px}
+.search-wrap button{background:var(--green);color:#fff;border:none;padding:7px 16px;cursor:pointer;font-size:13px;font-weight:700;font-family:'Outfit',sans-serif;transition:background .18s}
+.search-wrap button:hover{background:var(--green-2)}
+
+/* ══ POSTS GRID ══ */
+.posts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;margin-bottom:32px}
+
+/* ══ POST CARD ══ */
+.post-card{
+  background:#fff;
+  border:1.5px solid var(--border);
+  border-radius:var(--r);
+  overflow:hidden;
+  text-decoration:none;
+  color:var(--ink);
+  transition:all .22s;
+  display:flex;flex-direction:column;
+  position:relative;
+  box-shadow:var(--shadow-sm);
+}
+.post-card:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:var(--shadow)}
+.post-thumb{height:155px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;flex-shrink:0}
+.post-num{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.5);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px}
+/* Admin buttons — only visible to admin */
+.post-admin-bar{position:absolute;top:8px;right:8px;display:none;gap:5px;z-index:2}
+body.is-admin .post-admin-bar{display:flex}
+.pa-btn{background:rgba(13,45,82,.75);color:#fff;border:none;border-radius:var(--r-xs);padding:5px 10px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;white-space:nowrap;transition:background .15s}
+.pa-btn:hover{background:rgba(13,45,82,.95)}
+.pa-btn.del{background:rgba(185,28,28,.8)}
+.pa-btn.del:hover{background:#b91c1c}
+.post-body{padding:18px;flex:1;display:flex;flex-direction:column;gap:7px}
+.post-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:100px;width:fit-content}
+.post-title{font-family:'Playfair Display',serif;font-size:1rem;line-height:1.35;flex:1;color:var(--ink)}
+.post-desc{font-size:12px;color:var(--ink-3);line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post-meta{display:flex;gap:10px;font-size:11px;color:var(--ink-3);margin-top:auto;padding-top:8px;border-top:1px solid var(--border)}
+.post-cta{font-size:12px;font-weight:700;color:var(--green);margin-top:4px}
+
+/* ══ EMPTY STATE ══ */
+.empty-state{text-align:center;padding:60px 24px;color:var(--ink-3);grid-column:1/-1}
+.empty-state .icon{font-size:3rem;margin-bottom:12px}
+.empty-state h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);margin-bottom:8px}
+
+/* ══ PAGINATION ══ */
+.pagination{display:flex;justify-content:center;gap:8px}
+.page-btn{width:38px;height:38px;border:1.5px solid var(--border);border-radius:var(--r-xs);background:#fff;color:var(--ink-2);font-size:13px;font-weight:600;cursor:pointer;transition:all .18s;font-family:'Outfit',sans-serif;display:flex;align-items:center;justify-content:center}
+.page-btn:hover{border-color:var(--navy);color:var(--navy)}
+.page-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* ══ VISITOR ADMIN BUTTON ══ */
+.visitor-btn{
+  position:fixed;bottom:24px;right:24px;z-index:400;
+  background:var(--navy);color:#fff;border:none;
+  border-radius:100px;padding:13px 22px;
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+.visitor-btn:hover{background:var(--green);transform:translateY(-2px)}
+body.is-admin .visitor-btn{display:none!important}
+
+/* ══ ADMIN FAB ══ */
+.admin-fab{
+  position:fixed;bottom:24px;right:24px;z-index:400;
+  display:none;flex-direction:column;align-items:flex-end;gap:9px;
+}
+body.is-admin .admin-fab{display:flex}
+.fab-main{
+  background:var(--navy);color:#fff;border:none;
+  border-radius:100px;padding:13px 22px;
+  font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:8px;
+  transition:all .2s;white-space:nowrap;
+}
+.fab-main:hover{background:var(--navy-2)}
+.fab-sub{
+  background:#fff;color:var(--ink);
+  border:1.5px solid var(--border);
+  border-radius:100px;padding:10px 18px;
+  font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;box-shadow:var(--shadow-sm);
+  display:none;align-items:center;gap:7px;
+  white-space:nowrap;transition:all .18s;
+}
+.fab-sub:hover{background:var(--navy-light);border-color:var(--navy);color:var(--navy)}
+.fab-logout{background:#fff2f2;color:#b91c1c;border-color:#fecaca}
+.fab-logout:hover{background:#b91c1c!important;color:#fff!important;border-color:#b91c1c!important}
+.admin-fab.open .fab-sub{display:flex}
+
+/* ══ LOGIN OVERLAY ══ */
+.overlay{display:none;position:fixed;inset:0;background:rgba(10,20,40,.65);z-index:800;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.login-box{background:#fff;border-radius:var(--r);width:100%;max-width:360px;overflow:hidden;box-shadow:var(--shadow-lg)}
+.login-hdr{
+  background:linear-gradient(135deg,var(--navy),var(--navy-2));
+  padding:28px 24px 24px;text-align:center;
+}
+.login-hdr-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:8px}
+.login-hdr h2{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.login-hdr p{font-size:12px;color:rgba(255,255,255,.5)}
+.login-body{padding:28px 24px}
+.lf{display:flex;flex-direction:column;gap:5px;margin-bottom:16px}
+.lf label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3)}
+.pw-wrap{position:relative}
+.pw-wrap input{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:17px;color:var(--ink);padding:12px 44px 12px 14px;outline:none;transition:border-color .2s;letter-spacing:4px;text-align:center;font-weight:700}
+.pw-wrap input:focus{border-color:var(--navy)}
+.pw-wrap input.error{border-color:#dc2626;animation:shake .35s}
+.pw-toggle{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:18px;padding:4px}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.login-error{display:none;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:10px 14px;font-size:13px;color:#dc2626;text-align:center;margin-bottom:14px;font-weight:600}
+.login-error.show{display:block}
+.login-btn{width:100%;height:48px;background:var(--navy);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.login-btn:hover{background:var(--green)}
+.login-cancel{display:block;text-align:center;margin-top:14px;font-size:13px;color:var(--ink-3);cursor:pointer}
+.login-cancel:hover{color:var(--ink);text-decoration:underline}
+
+/* ══ MODALS ══ */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,20,40,.55);z-index:500;backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:var(--r);width:100%;max-width:540px;max-height:94vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal-hdr{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:2}
+.modal-hdr h2{font-size:15px;font-weight:700}
+.modal-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:24px;cursor:pointer;line-height:1;padding:0;transition:color .15s}
+.modal-close:hover{color:#fff}
+.modal-body{padding:22px}
+
+/* TABS */
+.modal-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:16px}
+.modal-tab{padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:none;color:var(--ink-3);font-family:'Outfit',sans-serif;border-bottom:2.5px solid transparent;margin-bottom:-2px;transition:all .18s}
+.modal-tab.active{color:var(--navy);border-bottom-color:var(--green)}
+.modal-tab:hover{color:var(--navy)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* FORM */
+.af{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.af label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.af input,.af select,.af textarea{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);padding:10px 13px;outline:none;transition:border-color .2s;background:#fff}
+.af input:focus,.af select:focus,.af textarea:focus{border-color:var(--navy)}
+.af textarea{resize:vertical;min-height:100px;line-height:1.6}
+.af select{height:40px;cursor:pointer}
+.af-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.char-count{font-size:11px;color:var(--ink-3);text-align:right;margin-top:3px}
+.char-count.warn{color:#f59e0b}
+.char-count.bad{color:#dc2626}
+.content-editor{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:13px;color:var(--ink);padding:12px 13px;outline:none;background:#fff;resize:vertical;min-height:320px;line-height:1.75;transition:border-color .2s}
+.content-editor:focus{border-color:var(--navy)}
+.tab-guide{background:var(--navy-light);border:1px solid #b8cde8;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:12px;line-height:1.65;color:var(--navy-2)}
+.seo-guide{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:12px;line-height:1.65;color:#92400e}
+.modal-btn{width:100%;height:46px;background:var(--green);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;margin-top:16px}
+.modal-btn:hover{background:var(--green-2)}
+.modal-btn.secondary{background:#fff;color:var(--ink);border:1.5px solid var(--border);margin-top:0}
+.modal-btn.secondary:hover{background:var(--navy-light);border-color:var(--navy);color:var(--navy)}
+.modal-btn.danger{background:#fef2f2;color:#b91c1c;border:1.5px solid #fecaca;margin-top:0}
+.modal-btn.danger:hover{background:#b91c1c;color:#fff}
+.btn-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.slug-preview{font-size:11px;color:var(--ink-3);margin-top:4px}
+.slug-preview code{background:#f1f5f9;padding:1px 6px;border-radius:4px;font-family:monospace;font-size:11px}
+
+/* MANAGE TABLE */
+.manage-search{margin-bottom:14px}
+.manage-search input{width:100%;border:1.5px solid var(--border);border-radius:var(--r-sm);padding:9px 13px;font-family:'Outfit',sans-serif;font-size:13px;outline:none;transition:border-color .2s}
+.manage-search input:focus{border-color:var(--navy)}
+.manage-table{width:100%;border-collapse:collapse;font-size:13px}
+.manage-table th{text-align:left;padding:9px 12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);border-bottom:2px solid var(--border);white-space:nowrap}
+.manage-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+.manage-table tr:last-child td{border-bottom:none}
+.manage-table tr:hover td{background:#f8fafc}
+.t-title{font-weight:600;color:var(--ink);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t-cat{font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap}
+.t-actions{display:flex;gap:6px}
+.t-btn{padding:4px 10px;border-radius:var(--r-xs);border:1.5px solid var(--border);background:#fff;font-size:11px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .15s}
+.t-btn:hover{background:var(--navy-light);border-color:var(--navy);color:var(--navy)}
+.t-btn.del{color:#b91c1c;border-color:#fecaca}
+.t-btn.del:hover{background:#b91c1c;color:#fff;border-color:#b91c1c}
+.empty-table{text-align:center;padding:32px;color:var(--ink-3);font-size:14px}
+
+/* ADSENSE */
+.ad-code-block{background:#f8fafc;border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;margin-bottom:14px}
+.ad-code-block h4{font-size:12px;font-weight:700;color:var(--ink-2);margin-bottom:6px}
+.ad-pos-badge{font-size:11px;font-weight:600;color:var(--ink-3);background:#e2e8f0;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px}
+
+/* TOAST */
+.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:100px;font-size:13px;font-weight:600;z-index:900;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.success{background:var(--green)}
+.toast.error{background:#dc2626}
+
+/* ══ FOOTER — FincalMax dark navy ══ */
+footer{background:var(--navy);color:rgba(255,255,255,.45);margin-top:0}
+.footer-inner{max-width:1160px;margin:0 auto;padding:44px 28px 28px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer-brand-text{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.1rem;color:#fff}
+.footer-brand-text span{color:var(--green-2)}
+.footer-sub{font-size:9px;font-weight:600;letter-spacing:.12em;color:rgba(255,255,255,.35);text-transform:uppercase;display:block}
+.footer-desc{font-size:13px;line-height:1.7;color:rgba(255,255,255,.4)}
+.footer-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:12px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:8px;transition:color .18s}
+.footer-col a:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.08);margin:0}
+.footer-bottom{max-width:1160px;margin:0 auto;padding:16px 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,.3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{color:rgba(255,255,255,.3);text-decoration:none}
+.footer-links a:hover{color:#fff}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){
+  header{padding:0 14px;height:60px}
+  .hamburger{display:flex}
+  nav{display:none}
+  .main{padding:18px 14px 80px}
+  .blog-hero{padding:24px 20px}
+  .modal-overlay{padding:0;align-items:flex-end}
+  .modal{border-radius:var(--r) var(--r) 0 0;max-height:96vh}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:22px;padding:28px 16px}
+  .footer-bottom{padding:14px 16px;flex-direction:column}
+  .admin-fab,.visitor-btn{bottom:16px;right:16px}
+  .af-row{grid-template-columns:1fr}
+  .search-wrap input{width:130px}
+  .overlay{padding:16px}
+}
+</style>
+<script src="../vendor/jszip.min.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="../index.html" class="logo">
+    <span class="logo-mark">
+      <svg width="38" height="38" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="#2d8c3e" stroke-width="2" fill="#0d2d52"/>
+        <text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text>
+        <rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#3aad51"/>
+        <rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#3aad51"/>
+        <path d="M18.5 19 Q22.5 13 25 11" stroke="#3aad51" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        <polygon points="25,9 27.5,12.5 23.5,12.5" fill="#3aad51"/>
+      </svg>
+    </span>
+    <div>
+      <span class="logo-text">Fincal<span>Max</span></span>
+      <span class="logo-sub">Smart Financial Calculators &amp; Tools</span>
+    </div>
+  </a>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../calculators/index.html">Calculators</a>
+    <a href="../articles/index.html">Articles</a>
+    <a href="index.html" class="active">Blog</a>
+    <a href="../pages/about.html">About Us</a>
+    <a href="../pages/contact.html" class="nav-cta">Contact</a>
+  </nav>
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mm').classList.toggle('open')">
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mm">
+  <a href="../index.html">🏠 Home</a>
+  <a href="../calculators/index.html">🧮 Calculators</a>
+  <a href="../articles/index.html">📚 Articles</a>
+  <a href="index.html">✍️ Blog</a>
+  <a href="../pages/about.html">👤 About Us</a>
+  <a href="../pages/contact.html">📬 Contact</a>
+</div>
+
+<!-- AD TOP -->
+<div class="ad-slot">
+  <div class="ad-block" id="adTop">Advertisement · 728×90</div>
+</div>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> › <span>Blog</span>
+</div>
+
+<div class="main">
+
+  <!-- HERO -->
+  <div class="blog-hero">
+    <div class="blog-hero-row">
+      <div>
+        <h1>📝 FincalMax Blog</h1>
+        <p>Mortgage guides, real estate tips &amp; financial insights</p>
+      </div>
+      <span class="post-count-badge" id="postCountBadge">0 articles</span>
+    </div>
+  </div>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+    <button class="filter-btn" onclick="setFilter('Mortgage',this)">🏠 Mortgage</button>
+    <button class="filter-btn" onclick="setFilter('Refinance',this)">🔄 Refinance</button>
+    <button class="filter-btn" onclick="setFilter('First-Time Buyer',this)">🏡 First-Time Buyer</button>
+    <button class="filter-btn" onclick="setFilter('Credit',this)">💳 Credit</button>
+    <button class="filter-btn" onclick="setFilter('Investing',this)">📈 Investing</button>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Search articles…" oninput="doSearch(this.value)">
+      <button onclick="doSearch(document.getElementById('searchInput').value)">Search</button>
+    </div>
+  </div>
+
+  <div class="posts-grid" id="postsGrid"></div>
+
+  <div style="display:flex;justify-content:center;margin:8px 0 32px">
+    <div class="ad-block" id="adMid">Advertisement · 728×90</div>
+  </div>
+
+  <div class="pagination" id="paginationRow"></div>
+
+  <div style="display:flex;justify-content:center;margin-top:28px">
+    <div class="ad-block" id="adBot">Advertisement · 728×90</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="15" stroke="#3aad51" stroke-width="2" fill="#0d2d52"/>
+          <text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text>
+          <rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#3aad51"/>
+          <rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#3aad51"/>
+          <path d="M18.5 19 Q22.5 13 25 11" stroke="#3aad51" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+          <polygon points="25,9 27.5,12.5 23.5,12.5" fill="#3aad51"/>
+        </svg>
+        <div>
+          <div class="footer-brand-text">Fincal<span>Max</span></div>
+          <span class="footer-sub">Smart Financial Calculators &amp; Tools</span>
+        </div>
+      </div>
+      <p class="footer-desc">Free calculators and expert guides for mortgage, real estate, and financial decisions.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <a href="../index.html">Home</a>
+      <a href="../calculators/index.html">Calculators</a>
+      <a href="index.html">Blog</a>
+      <a href="../pages/about.html">About Us</a>
+      <a href="../pages/contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Resources</div>
+      <a href="index.html">Blog</a>
+      <a href="../articles/index.html">Articles</a>
+      <a href="../pages/privacy-policy.html">Privacy Policy</a>
+      <a href="../pages/terms.html">Terms of Use</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Calculators</div>
+      <a href="../calculators/mortgage-calculator.html">Mortgage</a>
+      <a href="../calculators/refinance-calculator.html">Refinance</a>
+      <a href="../calculators/affordability-calculator.html">Affordability</a>
+      <a href="../calculators/index.html">All Calculators →</a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <span>© 2026 FincalMax.com · For informational purposes only · Not financial advice</span>
+    <div class="footer-links">
+      <a href="../pages/privacy-policy.html">Privacy</a>
+      <a href="../pages/terms.html">Terms</a>
+      <a href="../pages/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- VISITOR ADMIN BUTTON -->
+<button class="visitor-btn" id="visitorBtn" onclick="openLogin()">🔐 Admin</button>
+
+<!-- ADMIN FAB -->
+<div class="admin-fab" id="adminFab">
+  <button class="fab-sub fab-logout" onclick="doLogout()">🚪 Logout</button>
+  <button class="fab-sub" onclick="openSettings()">⚙️ AdSense</button>
+  <button class="fab-sub" onclick="openManage()">📋 Manage Posts</button>
+  <button class="fab-sub" onclick="openAddPost()">✏️ Add New Post</button>
+  <button class="fab-main" id="fabMainBtn" onclick="toggleFab()">🛠️ Admin ▾</button>
+</div>
+
+<!-- LOGIN -->
+<div class="overlay" id="loginOverlay">
+  <div class="login-box">
+    <div class="login-hdr">
+      <div class="login-hdr-logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#3aad51" stroke-width="2" fill="#0d2d52"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#3aad51"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#3aad51"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#3aad51" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#3aad51"/></svg>
+        <span style="color:#fff;font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:800">Fincal<span style="color:#3aad51">Max</span></span>
+      </div>
+      <h2>Admin Access</h2>
+      <p>Enter your secret code</p>
+    </div>
+    <div class="login-body">
+      <div class="login-error" id="loginError">❌ Wrong code. Try again.</div>
+      <div class="lf">
+        <label>Secret Code</label>
+        <div class="pw-wrap">
+          <input type="password" id="adminCode" placeholder="••••••••" maxlength="20"
+            onkeydown="if(event.key==='Enter')doLogin()"
+            oninput="this.classList.remove('error');document.getElementById('loginError').classList.remove('show')">
+          <button class="pw-toggle" id="pwToggle" onclick="togglePw()">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="doLogin()">🔓 Enter Admin</button>
+      <span class="login-cancel" onclick="closeLogin()">Cancel — back to blog</span>
+    </div>
+  </div>
+</div>
+
+<!-- ADD/EDIT POST MODAL -->
+<div class="modal-overlay" id="postModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2 id="modalTitle">✏️ Add New Post</h2>
+      <button class="modal-close" onclick="closePostModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchTab('info',this)">📝 Content</button>
+        <button class="modal-tab" onclick="switchTab('article',this)">📄 Full Article</button>
+        <button class="modal-tab" onclick="switchTab('seo',this)">🔍 SEO</button>
+      </div>
+      <div class="tab-guide" id="tabGuide">📝 <strong>Content</strong> — اكتب عنوان المقال وملخصه وتصنيفه. هذا ما يظهر على البطاقة في البلوج.</div>
+
+      <!-- CONTENT TAB -->
+      <div class="tab-pane active" id="tab-info">
+        <div class="af">
+          <label>Post Title *</label>
+          <input type="text" id="fTitle" placeholder="e.g. How to Get the Best Mortgage Rate in 2026" oninput="autoSlug(this.value)">
+        </div>
+        <div class="af">
+          <label>Short Description * <span style="font-weight:400;text-transform:none;font-size:10px">(ملخص يظهر على البطاقة)</span></label>
+          <textarea id="fDesc" placeholder="اكتب ملخص المقال هنا…" style="min-height:120px" oninput="updateCharCount('fDesc','descCount',2000)"></textarea>
+          <div class="char-count" id="descCount">0 / 2000</div>
+        </div>
+        <div class="af-row">
+          <div class="af">
+            <label>Category</label>
+            <select id="fCat">
+              <option value="Mortgage">🏠 Mortgage</option>
+              <option value="Refinance">🔄 Refinance</option>
+              <option value="First-Time Buyer">🏡 First-Time Buyer</option>
+              <option value="Credit">💳 Credit</option>
+              <option value="Down Payment">💰 Down Payment</option>
+              <option value="Loan Types">📋 Loan Types</option>
+              <option value="Buying Tips">💡 Buying Tips</option>
+              <option value="Investing">📈 Investing</option>
+              <option value="Market News">📰 Market News</option>
+              <option value="Strategy">🎯 Strategy</option>
+            </select>
+          </div>
+          <div class="af">
+            <label>Date Published</label>
+            <input type="date" id="fDate">
+          </div>
+        </div>
+        <div class="af-row">
+          <div class="af">
+            <label>Emoji Icon</label>
+            <input type="text" id="fEmoji" maxlength="4" value="🏠">
+          </div>
+          <div class="af">
+            <label>Card Background</label>
+            <select id="fBg">
+              <option value="linear-gradient(135deg,#0a1f3d,#0d2d52)">🔵 Navy Blue</option>
+              <option value="linear-gradient(135deg,#052e16,#166534)">🟢 Dark Green</option>
+              <option value="linear-gradient(135deg,#064e3b,#047857)">🌿 Emerald</option>
+              <option value="linear-gradient(135deg,#78350f,#b45309)">🟡 Gold</option>
+              <option value="linear-gradient(135deg,#312e81,#4338ca)">🟣 Indigo</option>
+              <option value="linear-gradient(135deg,#7f1d1d,#b91c1c)">🔴 Red</option>
+              <option value="linear-gradient(135deg,#0f172a,#1e293b)">⚫ Dark</option>
+            </select>
+          </div>
+        </div>
+        <div class="af">
+          <label>URL Slug *</label>
+          <input type="text" id="fSlug" placeholder="how-to-get-best-mortgage-rate">
+          <div class="slug-preview">URL: fincalmax.com/blog/<code id="slugPreview">your-slug</code>.html</div>
+        </div>
+        <input type="hidden" id="fEditId">
+      </div>
+
+      <!-- FULL ARTICLE TAB -->
+      <div class="tab-pane" id="tab-article">
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 14px;margin-bottom:14px;font-size:12px;line-height:1.7;color:#1e40af">
+          <strong>📄 Full Article</strong> — اكتب محتوى مقالك الكامل هنا. يمكنك كتابة حتى 10,000 كلمة.<br>
+          <strong>HTML بسيط للتنسيق:</strong>
+          <code style="background:#dbeafe;padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace">&lt;h2&gt;عنوان&lt;/h2&gt;</code>
+          <code style="background:#dbeafe;padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace">&lt;p&gt;فقرة&lt;/p&gt;</code>
+          <code style="background:#dbeafe;padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace">&lt;strong&gt;غامق&lt;/strong&gt;</code>
+          <code style="background:#dbeafe;padding:1px 5px;border-radius:3px;font-size:11px;font-family:monospace">&lt;ul&gt;&lt;li&gt;قائمة&lt;/li&gt;&lt;/ul&gt;</code>
+        </div>
+        <textarea class="content-editor" id="fContent" placeholder="اكتب مقالك الكامل هنا...&#10;&#10;&lt;h2&gt;المقدمة&lt;/h2&gt;&#10;&lt;p&gt;محتوى المقدمة...&lt;/p&gt;&#10;&#10;&lt;h2&gt;القسم الأول&lt;/h2&gt;&#10;&lt;p&gt;تفاصيل...&lt;/p&gt;"></textarea>
+        <div style="font-size:11px;color:var(--ink-3);margin-top:6px">💡 الإعلانات ستُضاف تلقائياً في 3 مواضع داخل المقال</div>
+      </div>
+
+      <!-- SEO TAB -->
+      <div class="tab-pane" id="tab-seo">
+        <div class="seo-guide">
+          🔍 <strong>SEO</strong> — هذه المعلومات تساعد Google على عرض مقالك. <strong>اختياري</strong> — إذا تركتها فارغة سيستخدم الموقع العنوان الرئيسي تلقائياً.
+        </div>
+        <div class="af">
+          <label>Meta Title <span style="font-weight:400;text-transform:none">— العنوان في Google (max 60)</span></label>
+          <input type="text" id="fMetaTitle" placeholder="أفضل معدلات الرهن العقاري 2026 | FincalMax" oninput="updateCharCount('fMetaTitle','metaTitleCount',60)">
+          <div class="char-count" id="metaTitleCount">0 / 60</div>
+        </div>
+        <div class="af">
+          <label>Meta Description <span style="font-weight:400;text-transform:none">— وصف Google (max 160)</span></label>
+          <textarea id="fMetaDesc" placeholder="تعرف على أفضل طرق الحصول على أقل معدل رهن عقاري في 2026..." style="min-height:65px" oninput="updateCharCount('fMetaDesc','metaDescCount',160)"></textarea>
+          <div class="char-count" id="metaDescCount">0 / 160</div>
+        </div>
+        <div class="af">
+          <label>Keywords <span style="font-weight:400;text-transform:none">— مفصولة بفاصلة</span></label>
+          <input type="text" id="fKeywords" placeholder="mortgage rate, home loan, refinance 2026">
+        </div>
+        <div class="af">
+          <label>Author <span style="font-weight:400;text-transform:none">— اسم الكاتب</span></label>
+          <input type="text" id="fAuthor" placeholder="FincalMax Editorial Team">
+        </div>
+      </div>
+
+      <button class="modal-btn" onclick="savePost()"><span id="submitLabel">✅ Publish Post</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- MANAGE POSTS MODAL -->
+<div class="modal-overlay" id="manageModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>📋 Manage All Posts</h2>
+      <button class="modal-close" onclick="closeManage()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#92400e;line-height:1.5">
+        ⚠️ <strong>للنشر:</strong> اضغط الزر الأخضر تحت → يحمّل ليك ملف <code>.zip</code> واحد فيه كل شي. فك الضغط، ضع الملفات داخل مجلد <code>/blog/</code> ديالك، وأعد نشر الموقع عبر Netlify (بنفس الطريقة المعتادة). بدون هذا، الزوار و Google لن يروا مقالاتك.
+      </div>
+      <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+        <button class="modal-btn" style="flex:0 0 auto;background:var(--green);font-size:15px;padding:12px 20px" onclick="publishNow()">📦 نشر الآن (تحميل ملف واحد)</button>
+        <details style="width:100%">
+          <summary style="cursor:pointer;font-size:12px;color:var(--ink-3)">خيارات متقدمة (ملفات منفصلة)</summary>
+          <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+            <button class="modal-btn" style="flex:0 0 auto" onclick="downloadPostsJSON()">posts.json فقط</button>
+            <button class="modal-btn" style="flex:0 0 auto" onclick="downloadAllStaticPosts()">صفحات HTML فقط</button>
+          </div>
+        </details>
+      </div>
+      <div class="manage-search">
+        <input type="text" id="manageSearch" placeholder="Search posts…" oninput="renderManageTable(this.value)">
+      </div>
+      <div style="overflow-x:auto">
+        <table class="manage-table">
+          <thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody id="manageTableBody"></tbody>
+        </table>
+        <div class="empty-table" id="manageEmpty" style="display:none">No posts yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADSENSE MODAL -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <h2>⚙️ AdSense Settings</h2>
+      <button class="modal-close" onclick="closeSettings()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:13px;color:var(--ink-2);margin-bottom:18px;line-height:1.65">الصق كودات Google AdSense هنا. كل مقال سيعرض 3 إعلانات تلقائياً.</p>
+      <div class="ad-code-block">
+        <h4>📌 Ad Slot 1 — أعلى المقال</h4>
+        <span class="ad-pos-badge">تحت الهيدر، فوق العنوان</span>
+        <div class="af"><label>AdSense Code</label><textarea id="adCode1" style="min-height:70px;font-family:monospace;font-size:11px" placeholder="&lt;ins class='adsbygoogle'...&gt;&lt;/ins&gt;"></textarea></div>
+      </div>
+      <div class="ad-code-block">
+        <h4>📌 Ad Slot 2 — منتصف المقال</h4>
+        <span class="ad-pos-badge">بعد المقدمة</span>
+        <div class="af"><label>AdSense Code</label><textarea id="adCode2" style="min-height:70px;font-family:monospace;font-size:11px" placeholder="&lt;ins class='adsbygoogle'...&gt;&lt;/ins&gt;"></textarea></div>
+      </div>
+      <div class="ad-code-block">
+        <h4>📌 Ad Slot 3 — أسفل المقال</h4>
+        <span class="ad-pos-badge">بعد محتوى المقال</span>
+        <div class="af"><label>AdSense Code</label><textarea id="adCode3" style="min-height:70px;font-family:monospace;font-size:11px" placeholder="&lt;ins class='adsbygoogle'...&gt;&lt;/ins&gt;"></textarea></div>
+      </div>
+      <div class="af"><label>Publisher ID</label><input type="text" id="adPubId" placeholder="ca-pub-XXXXXXXXXXXXXXXX"></div>
+      <button class="modal-btn" onclick="saveAdSettings()">💾 Save AdSense Settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE CONFIRM MODAL -->
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal" style="max-width:360px">
+    <div class="modal-hdr" style="background:linear-gradient(135deg,#7f1d1d,#b91c1c)">
+      <h2>🗑️ Delete Post</h2>
+      <button class="modal-close" onclick="closeDelete()">×</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:14px;color:var(--ink-2);margin-bottom:6px">هل تريد حذف هذا المقال نهائياً؟</p>
+      <p style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:14px" id="deletePostTitle"></p>
+      <p style="font-size:12px;color:var(--ink-3);margin-bottom:20px">لا يمكن التراجع عن هذا الإجراء.</p>
+      <div class="btn-row">
+        <button class="modal-btn secondary" onclick="closeDelete()">إلغاء</button>
+        <button class="modal-btn danger" onclick="confirmDelete()">🗑️ نعم، احذف</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+// CONFIG — غيّر الكود هنا
+// ⚠️ IMPORTANT: This code only locks the EDITOR UI in your own browser.
+// It is NOT real security — anyone can read it in the page source, and it
+// protects nothing important because actual publishing now requires
+// downloading posts.json and re-deploying it via Netlify (which already
+// requires your real Netlify login). Treat this as a "keep casual visitors
+// out of the editor" convenience, not a password to reuse anywhere else.
+// ══════════════════════════════════════
+const ADMIN_CODE = 'Fincal2026';
+
+// ══════════════════════════════════════
+// STORAGE KEYS
+// ══════════════════════════════════════
+const DB_KEY   = 'fm_blog_v3';
+const ADS_KEY  = 'fm_ads_v1';
+const AUTH_KEY = 'fm_admin_auth';  // localStorage — يبقى عبر التحديثات
+
+// ══════════════════════════════════════
+// AUTH — localStorage يحافظ على الجلسة
+// ══════════════════════════════════════
+function isAdmin(){
+  return localStorage.getItem(AUTH_KEY) === btoa(ADMIN_CODE + '_ok');
+}
+
+function applyAuthState(){
+  if(isAdmin()){
+    document.body.classList.add('is-admin');
+  } else {
+    document.body.classList.remove('is-admin');
+  }
+}
+
+function openLogin(){
+  document.getElementById('adminCode').value='';
+  document.getElementById('adminCode').type='password';
+  document.getElementById('pwToggle').textContent='👁';
+  document.getElementById('loginError').classList.remove('show');
+  document.getElementById('loginOverlay').classList.add('open');
+  setTimeout(()=>document.getElementById('adminCode').focus(),200);
+}
+
+function closeLogin(){
+  document.getElementById('loginOverlay').classList.remove('open');
+}
+
+function doLogin(){
+  const code=document.getElementById('adminCode').value.trim();
+  if(code===ADMIN_CODE){
+    localStorage.setItem(AUTH_KEY, btoa(ADMIN_CODE + '_ok'));
+    closeLogin();
+    applyAuthState();
+    renderGrid();
+    showToast('✅ مرحباً بك Admin!','success');
+  } else {
+    document.getElementById('loginError').classList.add('show');
+    const inp=document.getElementById('adminCode');
+    inp.classList.add('error');
+    inp.value='';
+    setTimeout(()=>inp.classList.remove('error'),400);
+    inp.focus();
+  }
+}
+
+function doLogout(){
+  localStorage.removeItem(AUTH_KEY);
+  applyAuthState();
+  closeFab();
+  renderGrid();
+  showToast('👋 تم تسجيل الخروج','');
+}
+
+function togglePw(){
+  const inp=document.getElementById('adminCode');
+  const btn=document.getElementById('pwToggle');
+  if(inp.type==='password'){inp.type='text';btn.textContent='🙈';}
+  else{inp.type='password';btn.textContent='👁';}
+}
+
+// ══════════════════════════════════════
+// DATABASE
+// ══════════════════════════════════════
+function getDB(){
+  try{return JSON.parse(localStorage.getItem(DB_KEY))||{posts:[]};}
+  catch(e){return{posts:[]};}
+}
+function saveDB(db){
+  localStorage.setItem(DB_KEY,JSON.stringify(db));
+}
+function getAds(){
+  try{return JSON.parse(localStorage.getItem(ADS_KEY))||{ad1:'',ad2:'',ad3:'',pubId:''};}
+  catch(e){return{ad1:'',ad2:'',ad3:'',pubId:''};}
+}
+function saveAds(a){localStorage.setItem(ADS_KEY,JSON.stringify(a));}
+
+// ══════════════════════════════════════
+// PUBLISHED POSTS — the REAL public data source.
+// This fetches blog/posts.json (a real file deployed with the site) so
+// every visitor — and every search engine crawler — sees the same content,
+// instead of only the admin's own browser. Local drafts (in localStorage)
+// stay private to the editor until exported into posts.json and deployed.
+// ══════════════════════════════════════
+let PUBLISHED=[];
+async function loadPublished(){
+  try{
+    const res=await fetch('posts.json',{cache:'no-store'});
+    PUBLISHED=await res.json();
+  }catch(e){
+    PUBLISHED=[];
+  }
+  mergePublishedIntoLocal();
+  renderGrid();
+  if(typeof renderManageTable==='function') renderManageTable();
+}
+function mergePublishedIntoLocal(){
+  const db=getDB();
+  let changed=false;
+  PUBLISHED.forEach(pp=>{
+    const existing=db.posts.find(p=>p.slug===pp.slug);
+    if(!existing){
+      db.posts.push({...pp, id:pp.id||('pub_'+pp.slug), published:true});
+      changed=true;
+    } else if(!existing.published){
+      Object.assign(existing,{...pp, id:existing.id, published:true});
+      changed=true;
+    }
+  });
+  if(changed) saveDB(db);
+}
+function buildPostsJSON(){
+  // Every locally-saved post becomes part of the exportable manifest.
+  // Strip out admin-only fields before export.
+  return JSON.stringify(getDB().posts.map(p=>({
+    id:p.id, title:p.title, desc:p.desc, slug:p.slug, category:p.category,
+    emoji:p.emoji, bg:p.bg, date:p.date, content:p.content,
+    metaTitle:p.metaTitle, metaDesc:p.metaDesc, keywords:p.keywords, author:p.author
+  })), null, 2);
+}
+function downloadPostsJSON(){
+  const json=buildPostsJSON();
+  const blob=new Blob([json],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='posts.json';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  // mark everything as published locally so the UI reflects "live" status
+  const db=getDB();
+  db.posts.forEach(p=>p.published=true);
+  saveDB(db);
+  renderGrid();
+  if(typeof renderManageTable==='function') renderManageTable();
+  showToast('📥 تم تحميل posts.json — رفعه إلى /blog/ عبر Netlify لنشر كل المقالات','success');
+}
+
+// ══════════════════════════════════════
+// STATIC PAGE GENERATOR
+// Builds a real, standalone HTML file for one post — matching the same
+// structure/CSS as articles/*.html. This is the file Google actually
+// crawls; posts.json only powers the listing grid/search, same way
+// articles/index.html lists real article files rather than rendering them.
+// ══════════════════════════════════════
+function escAttr(s){return (s||'').replace(/"/g,'&quot;');}
+function generateStaticPostHTML(p){
+  const url='https://www.fincalmax.com/blog/'+p.slug+'.html';
+  const metaTitle=(p.metaTitle||p.title);
+  const metaDesc=(p.metaDesc||p.desc);
+  const dateISO=(function(){ const d=new Date(p.date); return isNaN(d)?'':d.toISOString().slice(0,10); })();
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${metaTitle} | FincalMax</title>
+<meta name="description" content="${escAttr(metaDesc)}">
+${p.keywords?'<meta name="keywords" content="'+escAttr(p.keywords)+'">\n':''}<link rel="canonical" href="${url}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="${escAttr(metaTitle)} | FincalMax">
+<meta property="og:description" content="${escAttr(metaDesc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="https://www.fincalmax.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escAttr(metaTitle)} | FincalMax">
+<meta name="twitter:description" content="${escAttr(metaDesc)}">
+<meta name="twitter:image" content="https://www.fincalmax.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":${JSON.stringify(p.title)},"description":${JSON.stringify(p.desc)},"datePublished":${JSON.stringify(dateISO)},"author":{"@type":"Organization","name":${JSON.stringify(p.author||'FincalMax Editorial Team')}},"publisher":{"@type":"Organization","name":"FincalMax"}}<\/script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg></span><span class="logo-text">Fincal<span>Max</span></span></a>
+  <nav class="nav-links"><a href="../calculators/index.html">Calculators</a><a href="../articles/index.html">Articles</a><a href="index.html" class="active">Blog</a><a href="../pages/about.html">About</a><a href="../pages/contact.html">Contact</a></nav>
+  <div class="header-right"><button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mm').classList.toggle('open')"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
+</header>
+<div class="mobile-menu" id="mm"><a href="../index.html">🏠 Home</a><a href="../calculators/index.html">🧮 Calculators</a><a href="../articles/index.html">📚 Articles</a><a href="index.html">📰 Blog</a></div>
+<div class="ad-strip"><div class="ad-block ad-728">Advertisement 1 of 3 · 728×90 (Top)</div></div>
+<div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><a href="index.html">Blog</a><span>›</span><span>${escAttr(p.title)}</span></div>
+<div class="main">
+  <div class="article-header">
+    <span class="article-tag" style="background:${catMeta(p.category).bg};color:${catMeta(p.category).clr}">${p.category}</span>
+    <h1 class="article-title">${p.title}</h1>
+    <p class="article-intro">${p.desc}</p>
+  </div>
+  <div class="article-body">${(function(){
+    // Insert the 2nd ad roughly in the middle of the article body automatically
+    const body = p.content||'';
+    const adHtml = '<div class="ad-center"><div class="ad-block ad-728">Advertisement 2 of 3 · 728×90 (Middle)</div></div>';
+    const blocks = body.split(/(<\/h2>|<\/h3>)/i);
+    if(blocks.length > 4){
+      const mid = Math.floor(blocks.length/2);
+      // round to nearest tag boundary so the ad doesn't land mid-sentence
+      const insertAt = mid % 2 === 0 ? mid : mid+1;
+      blocks.splice(insertAt, 0, adHtml);
+      return blocks.join('');
+    }
+    return body + adHtml;
+  })()}</div>
+  <div class="ad-center"><div class="ad-block ad-728">Advertisement 3 of 3 · 728×90 (Bottom)</div></div>
+  <div class="related-links"><h4>🔗 Related Calculators</h4>
+    <a href="../calculators/mortgage-calculator.html">🏠 Mortgage Calculator</a>
+    <a href="../calculators/index.html">🧮 All Calculators</a>
+    <a href="index.html">📰 Back to Blog</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-main">
+    <div><span class="footer-brand"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:5px"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg>FincalMax</span><div class="footer-desc">Free calculators for real estate and finance.</div></div>
+    <div class="footer-col"><div class="footer-col-title">Calculators</div><a href="../calculators/mortgage-calculator.html">Mortgage</a><a href="../calculators/index.html">All Calculators</a></div>
+    <div class="footer-col"><div class="footer-col-title">Blog</div><a href="index.html">All Posts</a><a href="../articles/index.html">Articles</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="../pages/about.html">About</a><a href="../pages/privacy-policy.html">Privacy</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 FincalMax.com · Not financial advice</span><div class="footer-links"><a href="../pages/privacy-policy.html">Privacy</a><a href="../pages/terms.html">Terms</a></div></div>
+</footer>
+<script>document.addEventListener('click',e=>{const m=document.getElementById('mm');if(m&&!m.contains(e.target)&&!e.target.closest('.hamburger'))m.classList.remove('open');});<\/script>
+</body>
+</html>`;
+}
+function downloadStaticPost(id){
+  const db=getDB();
+  const p=db.posts.find(x=>x.id===id);
+  if(!p){showToast('المقال غير موجود','error');return;}
+  if(!p.content){showToast('اكتب محتوى المقال أولاً','error');return;}
+  const html=generateStaticPostHTML(p);
+  const blob=new Blob([html],{type:'text/html'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download=p.slug+'.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  showToast('📄 تم تحميل '+p.slug+'.html — رفعه إلى /blog/ عبر Netlify','success');
+}
+function downloadAllStaticPosts(){
+  const db=getDB();
+  if(!db.posts.length){showToast('لا توجد مقالات بعد','error');return;}
+  db.posts.forEach((p,i)=>{
+    setTimeout(()=>{
+      if(!p.content) return;
+      const html=generateStaticPostHTML(p);
+      const blob=new Blob([html],{type:'text/html'});
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement('a');
+      a.href=url; a.download=p.slug+'.html';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }, i*300);
+  });
+  showToast('📄 جاري تحميل كل صفحات المقالات...','success');
+}
+
+// ══════════════════════════════════════
+// ONE-CLICK PUBLISH — bundles posts.json + every post's .html file into a
+// single zip so there's only ONE file to extract into /blog/ before
+// re-deploying, instead of downloading each file separately.
+// ══════════════════════════════════════
+async function publishNow(){
+  const db=getDB();
+  if(!db.posts.length){showToast('لا توجد مقالات بعد — أضف مقالاً أولاً','error');return;}
+  if(typeof JSZip==='undefined'){showToast('تعذر تحميل أداة الضغط — تحقق من الاتصال بالإنترنت وحاول مجدداً','error');return;}
+  const zip=new JSZip();
+  zip.file('posts.json', buildPostsJSON());
+  let count=0;
+  db.posts.forEach(p=>{
+    if(!p.content) return;
+    zip.file(p.slug+'.html', generateStaticPostHTML(p));
+    count++;
+  });
+  const blob=await zip.generateAsync({type:'blob'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='fincalmax-blog-publish.zip';
+  document.body.appendChild(a); a.click(); a.remove();
+  URL.revokeObjectURL(url);
+  db.posts.forEach(p=>p.published=true);
+  saveDB(db);
+  renderGrid();
+  if(typeof renderManageTable==='function') renderManageTable();
+  showToast(`📦 تم تحميل fincalmax-blog-publish.zip (${count} مقال + posts.json) — فك الضغط وضع الملفات في /blog/ ثم أعد النشر عبر Netlify`,'success');
+}
+
+// ══════════════════════════════════════
+// STATE
+// ══════════════════════════════════════
+let currentFilter='all';
+let currentSearch='';
+let currentPage=1;
+const PER_PAGE=12;
+let deleteTargetId=null;
+
+function catMeta(cat){
+  const m={
+    'Mortgage':{bg:'#e8f0fb',clr:'#0d2d52'},
+    'Refinance':{bg:'#e8f5eb',clr:'#2d8c3e'},
+    'First-Time Buyer':{bg:'#fffbeb',clr:'#b45309'},
+    'Credit':{bg:'#fef2f2',clr:'#b91c1c'},
+    'Down Payment':{bg:'#e8f5eb',clr:'#2d8c3e'},
+    'Loan Types':{bg:'#fffbeb',clr:'#b45309'},
+    'Buying Tips':{bg:'#f5f3ff',clr:'#6d28d9'},
+    'Investing':{bg:'#e8f0fb',clr:'#0d2d52'},
+    'Market News':{bg:'#fef2f2',clr:'#b91c1c'},
+    'Strategy':{bg:'#f5f3ff',clr:'#6d28d9'},
+  };
+  return m[cat]||{bg:'#f1f5f9',clr:'#64748b'};
+}
+
+// ══════════════════════════════════════
+// RENDER GRID
+// ══════════════════════════════════════
+function getFiltered(){
+  let posts=getDB().posts;
+  if(currentFilter!=='all') posts=posts.filter(p=>p.category===currentFilter);
+  if(currentSearch){
+    const q=currentSearch.toLowerCase();
+    posts=posts.filter(p=>
+      p.title.toLowerCase().includes(q)||
+      p.desc.toLowerCase().includes(q)||
+      p.category.toLowerCase().includes(q)
+    );
+  }
+  return posts;
+}
+
+function renderGrid(){
+  const posts=getFiltered();
+  const total=posts.length;
+  const totalPages=Math.max(1,Math.ceil(total/PER_PAGE));
+  if(currentPage>totalPages) currentPage=totalPages;
+  const pagePosts=posts.slice((currentPage-1)*PER_PAGE, currentPage*PER_PAGE);
+
+  document.getElementById('postCountBadge').textContent=total+(total===1?' article':' articles');
+
+  const grid=document.getElementById('postsGrid');
+  if(pagePosts.length===0){
+    grid.innerHTML=`<div class="empty-state">
+      <div class="icon">✍️</div>
+      <h3>${currentSearch||currentFilter!=='all'?'No results found':'No posts yet'}</h3>
+      <p style="font-size:14px;color:var(--ink-3);max-width:320px;margin:0 auto">
+        ${currentSearch||currentFilter!=='all'?'Try a different search or filter.':'Posts will appear here once published.'}
+      </p>
+    </div>`;
+  } else {
+    grid.innerHTML=pagePosts.map((p,i)=>{
+      const cm=catMeta(p.category);
+      const num=total-((currentPage-1)*PER_PAGE+i);
+      // Published posts link to their real standalone HTML file (what Google actually
+      // indexes). Unpublished local drafts fall back to the JS-rendered preview template.
+      const href = p.published ? (p.slug+'.html') : ('post.html?post='+encodeURIComponent(p.slug));
+      return `<a class="post-card" href="${href}">
+        <div class="post-thumb" style="background:${p.bg}">
+          <span>${p.emoji||'📝'}</span>
+          <span class="post-num">#${num}</span>
+          <div class="post-admin-bar">
+            <button class="pa-btn" onclick="editPost('${p.id}',event)">✏️ Edit</button>
+            <button class="pa-btn del" onclick="askDelete('${p.id}',event)">🗑️</button>
+          </div>
+        </div>
+        <div class="post-body">
+          <span class="post-tag" style="background:${cm.bg};color:${cm.clr}">${p.category}</span>
+          <div class="post-title">${p.title}</div>
+          <div class="post-desc">${p.desc.length>130?p.desc.slice(0,130)+'…':p.desc}</div>
+          <div class="post-meta">
+            <span>📅 ${p.date}</span>
+            <span>✍️ ${p.author||'FincalMax'}</span>
+          </div>
+          <div class="post-cta">Read More →</div>
+        </div>
+      </a>`;
+    }).join('');
+  }
+  renderPagination(totalPages);
+}
+
+function renderPagination(total){
+  const row=document.getElementById('paginationRow');
+  if(total<=1){row.innerHTML='';return;}
+  let h='';
+  if(currentPage>1) h+=`<button class="page-btn" onclick="goPage(${currentPage-1})">‹</button>`;
+  for(let i=1;i<=total;i++){
+    if(total>7&&Math.abs(i-currentPage)>2&&i!==1&&i!==total){
+      if(i===currentPage-3||i===currentPage+3) h+='<span style="padding:0 4px;color:var(--ink-3)">…</span>';
+      continue;
+    }
+    h+=`<button class="page-btn${i===currentPage?' active':''}" onclick="goPage(${i})">${i}</button>`;
+  }
+  if(currentPage<total) h+=`<button class="page-btn" onclick="goPage(${currentPage+1})">›</button>`;
+  row.innerHTML=h;
+}
+
+function goPage(n){currentPage=n;renderGrid();window.scrollTo({top:0,behavior:'smooth'});}
+function setFilter(cat,btn){
+  currentFilter=cat;currentPage=1;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+}
+function doSearch(q){currentSearch=q;currentPage=1;renderGrid();}
+
+// ══════════════════════════════════════
+// FAB
+// ══════════════════════════════════════
+function toggleFab(){
+  const fab=document.getElementById('adminFab');
+  fab.classList.toggle('open');
+  document.getElementById('fabMainBtn').textContent=fab.classList.contains('open')?'🛠️ Admin ▴':'🛠️ Admin ▾';
+}
+function closeFab(){
+  document.getElementById('adminFab').classList.remove('open');
+  document.getElementById('fabMainBtn').textContent='🛠️ Admin ▾';
+}
+
+// ══════════════════════════════════════
+// ADD POST
+// ══════════════════════════════════════
+function openAddPost(){
+  if(!isAdmin()){openLogin();return;}
+  clearForm();
+  document.getElementById('modalTitle').textContent='✏️ Add New Post';
+  document.getElementById('submitLabel').textContent='✅ Publish Post';
+  const today=new Date();
+  document.getElementById('fDate').value=`${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  switchTab('info',document.querySelector('.modal-tab'));
+  document.getElementById('postModal').classList.add('open');
+  closeFab();
+}
+function closePostModal(){document.getElementById('postModal').classList.remove('open');}
+
+function clearForm(){
+  ['fTitle','fDesc','fSlug','fContent','fMetaTitle','fMetaDesc','fKeywords','fAuthor'].forEach(id=>{
+    document.getElementById(id).value='';
+  });
+  document.getElementById('fEmoji').value='🏠';
+  document.getElementById('fCat').selectedIndex=0;
+  document.getElementById('fBg').selectedIndex=0;
+  document.getElementById('fEditId').value='';
+  document.getElementById('slugPreview').textContent='your-slug';
+  document.getElementById('descCount').textContent='0 / 2000';
+  document.getElementById('descCount').className='char-count';
+  document.getElementById('metaTitleCount').textContent='0 / 60';
+  document.getElementById('metaTitleCount').className='char-count';
+  document.getElementById('metaDescCount').textContent='0 / 160';
+  document.getElementById('metaDescCount').className='char-count';
+}
+
+// ══════════════════════════════════════
+// SAVE POST
+// ══════════════════════════════════════
+function savePost(){
+  if(!isAdmin()) return;
+  const title=document.getElementById('fTitle').value.trim();
+  const desc=document.getElementById('fDesc').value.trim();
+  const slug=document.getElementById('fSlug').value.trim().toLowerCase().replace(/[^a-z0-9-]/g,'-').replace(/-+/g,'-');
+  const cat=document.getElementById('fCat').value;
+  const emoji=document.getElementById('fEmoji').value||'📝';
+  const bg=document.getElementById('fBg').value;
+  const dateVal=document.getElementById('fDate').value;
+  const content=document.getElementById('fContent').value.trim();
+  const metaTitle=document.getElementById('fMetaTitle').value.trim();
+  const metaDesc=document.getElementById('fMetaDesc').value.trim();
+  const keywords=document.getElementById('fKeywords').value.trim();
+  const author=document.getElementById('fAuthor').value.trim()||'FincalMax Editorial Team';
+  const editId=document.getElementById('fEditId').value;
+
+  if(!title||!desc||!slug){showToast('اكتب العنوان والوصف والـ Slug','error');return;}
+
+  // Parse date properly to avoid "152026/06/" bug
+  let date='';
+  if(dateVal){
+    const [y,m,d]=dateVal.split('-');
+    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    date=`${months[parseInt(m)-1]} ${parseInt(d)}, ${y}`;
+  } else {
+    const now=new Date();
+    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    date=`${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+  }
+
+  const db=getDB();
+  if(editId){
+    const idx=db.posts.findIndex(p=>p.id===editId);
+    if(idx>-1){
+      db.posts[idx]={...db.posts[idx],title,desc,slug,category:cat,emoji,bg,date,content,metaTitle,metaDesc,keywords,author,published:false};
+      saveDB(db);
+      showToast('✅ تم الحفظ. اضغط 📦 نشر الآن من Manage Posts لنشره فعلياً','success');
+    }
+  } else {
+    if(db.posts.find(p=>p.slug===slug)){showToast('الـ Slug موجود بالفعل — اختر آخر','error');return;}
+    db.posts.unshift({id:'p'+Date.now(),title,desc,slug,category:cat,emoji,bg,date,content,metaTitle,metaDesc,keywords,author,published:false});
+    saveDB(db);
+    showToast('✅ تم الحفظ. اضغط 📦 نشر الآن من Manage Posts لنشره فعلياً','success');
+  }
+  closePostModal();
+  renderGrid();
+  renderManageTable();
+}
+
+// ══════════════════════════════════════
+// EDIT POST
+// ══════════════════════════════════════
+function editPost(id,e){
+  if(e){e.stopPropagation();e.preventDefault();}
+  if(!isAdmin()) return;
+  const p=getDB().posts.find(x=>x.id===id);
+  if(!p) return;
+  clearForm();
+  document.getElementById('modalTitle').textContent='✏️ Edit Post';
+  document.getElementById('submitLabel').textContent='💾 Save Changes';
+  document.getElementById('fEditId').value=id;
+  document.getElementById('fTitle').value=p.title;
+  document.getElementById('fDesc').value=p.desc;
+  document.getElementById('fSlug').value=p.slug;
+  document.getElementById('slugPreview').textContent=p.slug;
+  document.getElementById('fEmoji').value=p.emoji||'📝';
+  document.getElementById('fContent').value=p.content||'';
+  document.getElementById('fMetaTitle').value=p.metaTitle||'';
+  document.getElementById('fMetaDesc').value=p.metaDesc||'';
+  document.getElementById('fKeywords').value=p.keywords||'';
+  document.getElementById('fAuthor').value=p.author||'';
+
+  // Set category
+  const catSel=document.getElementById('fCat');
+  for(let i=0;i<catSel.options.length;i++){if(catSel.options[i].value===p.category){catSel.selectedIndex=i;break;}}
+  // Set bg
+  const bgSel=document.getElementById('fBg');
+  for(let i=0;i<bgSel.options.length;i++){if(bgSel.options[i].value===p.bg){bgSel.selectedIndex=i;break;}}
+
+  // Set date — parse "June 16, 2026" → "2026-06-16"
+  try{
+    const months={January:1,February:2,March:3,April:4,May:5,June:6,July:7,August:8,September:9,October:10,November:11,December:12};
+    const parts=p.date.replace(',','').split(' ');
+    if(parts.length===3){
+      const y=parts[2],mo=String(months[parts[0]]||1).padStart(2,'0'),d=String(parts[1]).padStart(2,'0');
+      document.getElementById('fDate').value=`${y}-${mo}-${d}`;
+    }
+  }catch(e2){}
+
+  updateCharCount('fDesc','descCount',2000);
+  updateCharCount('fMetaTitle','metaTitleCount',60);
+  updateCharCount('fMetaDesc','metaDescCount',160);
+  switchTab('info',document.querySelector('.modal-tab'));
+  document.getElementById('postModal').classList.add('open');
+  closeManage();
+}
+
+// ══════════════════════════════════════
+// DELETE — auth stays intact
+// ══════════════════════════════════════
+function askDelete(id,e){
+  if(e){e.stopPropagation();e.preventDefault();}
+  if(!isAdmin()) return;
+  const p=getDB().posts.find(x=>x.id===id);
+  if(!p) return;
+  deleteTargetId=id;
+  document.getElementById('deletePostTitle').textContent='"'+p.title+'"';
+  document.getElementById('deleteModal').classList.add('open');
+}
+
+function closeDelete(){
+  document.getElementById('deleteModal').classList.remove('open');
+  deleteTargetId=null;
+  // Re-verify auth state to make sure it hasn't changed
+  applyAuthState();
+}
+
+function confirmDelete(){
+  if(!deleteTargetId) return;
+  // Check admin without calling applyAuthState (which could cause flicker)
+  if(!isAdmin()){
+    showToast('غير مصرح — سجّل الدخول مجدداً','error');
+    return;
+  }
+  const db=getDB();
+  db.posts=db.posts.filter(p=>p.id!==deleteTargetId);
+  saveDB(db);
+  deleteTargetId=null;
+  document.getElementById('deleteModal').classList.remove('open');
+  // Stay in admin mode — just re-render
+  applyAuthState();
+  renderGrid();
+  renderManageTable();
+  showToast('🗑️ تم حذف المقال','success');
+}
+
+// ══════════════════════════════════════
+// MANAGE TABLE
+// ══════════════════════════════════════
+function openManage(){
+  if(!isAdmin()) return;
+  renderManageTable();
+  document.getElementById('manageModal').classList.add('open');
+  closeFab();
+}
+function closeManage(){document.getElementById('manageModal').classList.remove('open');}
+function renderManageTable(q=''){
+  let posts=getDB().posts;
+  if(q){const ql=q.toLowerCase();posts=posts.filter(p=>p.title.toLowerCase().includes(ql)||p.category.toLowerCase().includes(ql));}
+  const tbody=document.getElementById('manageTableBody');
+  const empty=document.getElementById('manageEmpty');
+  if(!posts.length){tbody.innerHTML='';empty.style.display='block';return;}
+  empty.style.display='none';
+  tbody.innerHTML=posts.map(p=>{
+    const cm=catMeta(p.category);
+    const statusBadge=p.published
+      ?'<span style="background:#dcfce7;color:#166534;padding:3px 9px;border-radius:100px;font-size:11px;font-weight:700">🟢 Live</span>'
+      :'<span style="background:#fef9c3;color:#854d0e;padding:3px 9px;border-radius:100px;font-size:11px;font-weight:700">🟡 Local only</span>';
+    return`<tr>
+      <td><div class="t-title" title="${p.title}">${p.emoji||'📝'} ${p.title}</div></td>
+      <td><span class="t-cat" style="background:${cm.bg};color:${cm.clr}">${p.category}</span></td>
+      <td style="white-space:nowrap;font-size:12px;color:var(--ink-3)">${p.date}</td>
+      <td>${statusBadge}</td>
+      <td><div class="t-actions">
+        <button class="t-btn" onclick="editPost('${p.id}')">✏️ Edit</button>
+        <button class="t-btn" onclick="downloadStaticPost('${p.id}')">📄 Page</button>
+        <button class="t-btn del" onclick="askDelete('${p.id}')">🗑️ Del</button>
+      </div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════
+// ADSENSE
+// ══════════════════════════════════════
+function openSettings(){
+  if(!isAdmin()) return;
+  const ads=getAds();
+  document.getElementById('adCode1').value=ads.ad1||'';
+  document.getElementById('adCode2').value=ads.ad2||'';
+  document.getElementById('adCode3').value=ads.ad3||'';
+  document.getElementById('adPubId').value=ads.pubId||'';
+  document.getElementById('settingsModal').classList.add('open');
+  closeFab();
+}
+function closeSettings(){document.getElementById('settingsModal').classList.remove('open');}
+function saveAdSettings(){
+  if(!isAdmin()) return;
+  saveAds({
+    ad1:document.getElementById('adCode1').value.trim(),
+    ad2:document.getElementById('adCode2').value.trim(),
+    ad3:document.getElementById('adCode3').value.trim(),
+    pubId:document.getElementById('adPubId').value.trim()
+  });
+  showToast('💾 تم حفظ إعدادات AdSense!','success');
+  setTimeout(closeSettings,1000);
+}
+
+// ══════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════
+function autoSlug(title){
+  const s=title.toLowerCase().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-').trim();
+  document.getElementById('fSlug').value=s;
+  document.getElementById('slugPreview').textContent=s||'your-slug';
+}
+function updateCharCount(inputId,countId,max){
+  const len=document.getElementById(inputId).value.length;
+  const el=document.getElementById(countId);
+  el.textContent=len+' / '+max;
+  el.className='char-count'+(len>max?' bad':len>max*.9?' warn':'');
+}
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+  const guides={
+    'info':'📝 <strong>Content</strong> — اكتب عنوان المقال وملخصه وتصنيفه. هذا ما يظهر على البطاقة في البلوج.',
+    'article':'📄 <strong>Full Article</strong> — اكتب هنا محتوى مقالك الكامل. الزوار سيقرؤون هذا عند فتح المقال.',
+    'seo':'🔍 <strong>SEO</strong> — معلومات اختيارية تساعد Google على عرض مقالك في نتائج البحث.'
+  };
+  document.getElementById('tabGuide').innerHTML=guides[name]||'';
+}
+function showToast(msg,type=''){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.className='toast show '+(type||'');
+  setTimeout(()=>t.className='toast',2800);
+}
+
+// ══════════════════════════════════════
+// CLOSE MODALS ON OVERLAY CLICK
+// Note: deleteModal does NOT close on overlay click to avoid accidental close
+// ══════════════════════════════════════
+['postModal','manageModal','settingsModal','loginOverlay'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',function(e){
+    if(e.target===this) this.classList.remove('open');
+  });
+});
+// Delete modal: only close via buttons (not overlay click) to prevent auth confusion
+document.getElementById('deleteModal').addEventListener('click',function(e){
+  // Do NOT close on overlay click — must use buttons
+  e.stopPropagation();
+});
+
+// Close fab on outside click
+document.addEventListener('click',e=>{
+  const fab=document.getElementById('adminFab');
+  if(fab&&fab.classList.contains('open')&&!fab.contains(e.target)) closeFab();
+  const mm=document.getElementById('mm');
+  if(mm&&!mm.contains(e.target)&&!e.target.closest('.hamburger')) mm.classList.remove('open');
+});
+
+// ══════════════════════════════════════
+// INIT
+// ══════════════════════════════════════
+applyAuthState();
+renderGrid();
+loadPublished(); // fetches posts.json so every visitor sees real published content
+</script>
+</body>
+</html>

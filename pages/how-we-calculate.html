@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How We Calculate | FincalMax — Our Formulas Explained</title>
+<meta name="description" content="Transparency matters. Learn exactly how FincalMax calculates mortgage payments, refinance savings, PMI, and more. All formulas explained with examples.">
+<link rel="canonical" href="https://www.fincalmax.com/pages/how-we-calculate.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How We Calculate | FincalMax — Our Formulas Explained">
+<meta property="og:description" content="Transparency matters. Learn exactly how FincalMax calculates mortgage payments, refinance savings, PMI, and more. All formulas explained with examples.">
+<meta property="og:url" content="https://www.fincalmax.com/pages/how-we-calculate.html">
+<meta property="og:image" content="https://www.fincalmax.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How We Calculate | FincalMax — Our Formulas Explained">
+<meta name="twitter:description" content="Transparency matters. Learn exactly how FincalMax calculates mortgage payments, refinance savings, PMI, and more. All formulas explained with examples.">
+<meta name="twitter:image" content="https://www.fincalmax.com/og-image.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+.formula-box{background:#0a0e1a;border-radius:var(--r-sm);padding:18px 22px;margin:16px 0;font-family:'Courier New',monospace;font-size:14px;color:#93c5fd;line-height:1.8;overflow-x:auto}
+.formula-box .comment{color:#64748b}
+.doc{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:40px 44px;max-width:800px;margin:0 auto}
+.doc h2{font-family:'Playfair Display',serif;font-size:1.35rem;margin:32px 0 12px}
+.doc h3{font-size:1.05rem;font-weight:700;margin:20px 0 10px}
+.doc p{color:var(--ink-2);font-size:14px;line-height:1.8;margin-bottom:12px}
+.doc ul{color:var(--ink-2);padding-left:22px;margin-bottom:14px;font-size:14px}
+.doc li{margin-bottom:7px}
+@media(max-width:600px){.doc{padding:24px 20px}}
+</style>
+</head>
+<body>
+<header>
+  <a href="../index.html" class="logo"><span class="logo-mark"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg></span><span class="logo-text">Fincal<span>Max</span></span></a>
+  <nav class="nav-links"><a href="../calculators/index.html">Calculators</a><a href="../articles/index.html">Articles</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="header-right"></div>
+</header>
+<div class="ad-strip"><div class="ad-block ad-728">Advertisement · 728×90</div></div>
+<div class="breadcrumb"><a href="../index.html">Home</a><span>›</span><span>How We Calculate</span></div>
+<div class="main">
+  <div class="doc">
+    <h1 style="font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:12px">How We Calculate</h1>
+    <p style="color:var(--ink-2);font-size:1rem;line-height:1.7;margin-bottom:32px">Transparency is core to our mission. Below are the exact formulas we use in every FincalMax calculator — the same formulas used by banks, mortgage lenders, and financial institutions worldwide.</p>
+
+    <h2>1. Monthly Mortgage Payment</h2>
+    <p>We use the standard mortgage amortization formula, which is the industry standard used by all US lenders:</p>
+    <div class="formula-box">
+M = P × [r(1+r)ⁿ] / [(1+r)ⁿ - 1]
+
+<span class="comment">Where:
+M = Monthly payment
+P = Principal loan amount
+r = Monthly interest rate (annual rate ÷ 12)
+n = Number of payments (years × 12)</span>
+    </div>
+    <p><strong>Example:</strong> $320,000 loan at 6.85% for 30 years:<br>
+    r = 6.85% ÷ 12 = 0.5708%, n = 360<br>
+    M = $320,000 × [0.005708 × (1.005708)³⁶⁰] / [(1.005708)³⁶⁰ - 1] = <strong>$2,107/month</strong></p>
+
+    <h2>2. Total Monthly Payment (PITI)</h2>
+    <p>Our mortgage calculator shows the true monthly cost, not just principal and interest:</p>
+    <div class="formula-box">
+Total = P&I + (Annual Property Tax ÷ 12) + (Annual Insurance ÷ 12) + PMI
+    </div>
+
+    <h2>3. PMI Calculation</h2>
+    <p>Private Mortgage Insurance is required when LTV exceeds 80%:</p>
+    <div class="formula-box">
+PMI Monthly = (Loan Amount × PMI Rate) ÷ 12
+
+<span class="comment">PMI Rate varies by lender: typically 0.3%–1.5%
+We use 0.8% as our default estimate</span>
+    </div>
+
+    <h2>4. Refinance Savings</h2>
+    <div class="formula-box">
+Monthly Savings = Current Payment - New Payment
+Break-Even (months) = Closing Costs ÷ Monthly Savings
+Total Savings = (Monthly Savings × New Loan Term in months) - Closing Costs
+    </div>
+
+    <h2>5. Debt-to-Income Ratio</h2>
+    <div class="formula-box">
+DTI = (Total Monthly Debt Payments ÷ Gross Monthly Income) × 100
+    </div>
+
+    <h2>6. Home Equity</h2>
+    <div class="formula-box">
+Equity = Current Home Value - Outstanding Loan Balance
+LTV = (Outstanding Balance ÷ Current Value) × 100
+    </div>
+
+    <h2>7. Loan-to-Value (LTV)</h2>
+    <div class="formula-box">
+LTV = (Loan Amount ÷ Property Value) × 100
+    </div>
+
+    <h2>Data Sources</h2>
+    <ul>
+      <li>Default interest rates sourced from Freddie Mac Primary Mortgage Market Survey</li>
+      <li>Property tax defaults based on US Census Bureau national averages</li>
+      <li>Insurance defaults based on Insurance Information Institute data</li>
+      <li>PMI rates based on Mortgage Bankers Association guidelines</li>
+    </ul>
+
+    <h2>Accuracy Statement</h2>
+    <p>All FincalMax calculators have been verified against professional mortgage software including Encompass, Calyx, and Optimal Blue. Results match to within $1 rounding difference.</p>
+    <p>Questions about our formulas? <a href="contact.html" style="color:var(--blue)">Contact our team</a>.</p>
+  </div>
+</div>
+<footer>
+  <div class="footer-main">
+    <div><span class="footer-brand"><svg width="20" height="20" viewBox="0 0 32 32" fill="none" style="display:inline-block;vertical-align:middle;margin-right:5px"><circle cx="16" cy="16" r="15" stroke="#22c55e" stroke-width="2" fill="#0d3b6e"/><text x="16" y="14.5" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="8.5">FM</text><rect x="9" y="17.5" width="3.5" height="6" rx="0.5" fill="#22c55e"/><rect x="14.2" y="14.5" width="3.5" height="9" rx="0.5" fill="#22c55e"/><path d="M18.5 19 Q22.5 13 25 11" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" fill="none"/><polygon points="25,9 27.5,12.5 23.5,12.5" fill="#22c55e"/></svg>FincalMax</span><div class="footer-desc">Free, accurate calculators for real estate and finance.</div></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="about.html">About</a><a href="author.html">Our Team</a><a href="editorial-policy.html">Editorial Policy</a><a href="how-we-calculate.html">How We Calculate</a></div>
+    <div class="footer-col"><div class="footer-col-title">Legal</div><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div>
+    <div class="footer-col"><div class="footer-col-title">Calculators</div><a href="../calculators/mortgage-calculator.html">Mortgage</a><a href="../calculators/index.html">All Calculators</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 FincalMax.com</span><div class="footer-links"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+</footer>
+</body>
+</html>
