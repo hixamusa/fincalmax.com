@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FincalMax — Free Online Calculators for Every Decision</title>
+<meta name="description" content="Free, instant and accurate financial calculators for mortgage, refinance, and real estate. No sign-up required.">
+<meta name="keywords" content="free calculators, mortgage calculator, financial calculator, real estate calculator, online calculator">
+<link rel="canonical" href="https://www.fincalmax.com/">
+<!-- Open Graph -->
+<meta property="og:title" content="FincalMax — Free Online Calculators for Every Decision">
+<meta property="og:description" content="Free, instant and accurate calculators for real estate, finance, health, business and more.">
+<meta property="og:url" content="https://www.fincalmax.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.fincalmax.com/og-image.png">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FincalMax — Free Online Calculators">
+<meta name="twitter:description" content="Free, accurate calculators for real estate, finance, health and more.">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"FincalMax","url":"https://www.fincalmax.com","description":"Free online calculators for real estate, finance, health and business","potentialAction":{"@type":"SearchAction","target":"https://www.fincalmax.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FincalMax","url":"https://www.fincalmax.com","description":"Free online calculators for real estate, mortgage, finance and more","publisher":{"@type":"Organization","name":"FincalMax","url":"https://www.fincalmax.com","logo":{"@type":"ImageObject","url":"https://www.fincalmax.com/logo.png"}},"potentialAction":{"@type":"SearchAction","target":"https://www.fincalmax.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<style>
+/* Homepage specific */
+.hero-grid-home{display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:center;max-width:1140px;margin:0 auto;position:relative}
+@media(max-width:900px){.hero-grid-home{grid-template-columns:1fr}}
+.hero-card-home{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:26px;backdrop-filter:blur(10px)}
+@media(max-width:900px){.hero-card-home{display:none}}
+.hero-search{display:flex;max-width:480px;margin-bottom:28px}
+.hero-search input{flex:1;height:52px;border:none;outline:none;padding:0 18px;font-family:'Outfit',sans-serif;font-size:14px;color:var(--ink);background:var(--surface);border-radius:10px 0 0 10px}
+.hero-search button{height:52px;padding:0 22px;background:var(--green);color:#fff;border:none;border-radius:0 10px 10px 0;font-family:'Outfit',sans-serif;font-size:13px;font-weight:700;cursor:pointer}
+.search-results{position:absolute;top:58px;left:0;right:80px;background:#fff;border-radius:10px;box-shadow:0 12px 32px rgba(0,0,0,.25);overflow:hidden;z-index:50;display:none;max-height:320px;overflow-y:auto}
+.search-results.show{display:block}
+.search-results a{display:flex;align-items:center;gap:10px;padding:11px 16px;text-decoration:none;color:var(--ink);font-size:13.5px;font-weight:500;border-bottom:1px solid var(--border)}
+.search-results a:last-child{border-bottom:none}
+.search-results a:hover,.search-results a.active{background:var(--blue-light);color:var(--blue)}
+.search-results .sr-empty{padding:14px 16px;font-size:13px;color:var(--ink-3)}
+.search-results .sr-cat{font-size:10px;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;margin-left:auto;flex-shrink:0}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:5px 14px;font-size:12px;color:rgba(255,255,255,.6);cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.pill:hover{background:rgba(255,255,255,.14);color:#fff}
+.qc-label{font-size:11px;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.qc-input{width:100%;height:40px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:0 12px;font-family:'Outfit',sans-serif;font-size:14px;color:#fff;outline:none;margin-bottom:12px}
+.qc-input:focus{border-color:rgba(59,130,246,.5)}
+.qc-btn{width:100%;height:44px;background:var(--green);color:#fff;border:none;border-radius:8px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:12px}
+.qc-result{background:rgba(29,78,216,.2);border:1px solid rgba(59,130,246,.3);border-radius:8px;padding:14px;text-align:center;display:none}
+.qc-result.show{display:block}
+.qc-val{font-family:'Playfair Display',serif;font-size:1.9rem;color:#93c5fd}
+.qc-lbl{font-size:11px;color:rgba(255,255,255,.78);margin-top:3px}
+.trust-bar{background:var(--surface);border-bottom:1px solid var(--border)}
+.trust-inner{max-width:1140px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink-2)}
+.sec-hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.sec-link{font-size:13px;font-weight:600;color:var(--blue);text-decoration:none}
+.calc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:48px}
+@media(max-width:1000px){.calc-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.calc-grid{grid-template-columns:repeat(2,1fr)}}
+.calc-tile{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:20px 16px;cursor:pointer;text-decoration:none;color:var(--ink);transition:all .22s;display:flex;flex-direction:column;gap:8px;position:relative;overflow:hidden}
+.calc-tile::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-light),transparent 60%);opacity:0;transition:opacity .22s}
+.calc-tile:hover{border-color:var(--blue-2);transform:translateY(-3px);box-shadow:var(--shadow)}
+.calc-tile:hover::before{opacity:1}
+.calc-tile:hover .tc{color:var(--blue)}
+.tile-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative;z-index:1}
+.tile-name{font-size:13px;font-weight:700;position:relative;z-index:1;line-height:1.3}
+.tile-desc{font-size:12px;color:var(--ink-3);line-height:1.45;flex:1;position:relative;z-index:1}
+.tc{font-size:11px;font-weight:700;color:var(--ink-3);position:relative;z-index:1;transition:color .2s}
+.stats-strip{background:var(--ink);border-radius:var(--r);padding:36px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:48px;position:relative;overflow:hidden}
+.stats-strip::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:32px 32px}
+@media(max-width:600px){.stats-strip{grid-template-columns:1fr 1fr}}
+.stat-box{text-align:center;position:relative;z-index:1}
+.stat-n{font-family:'Playfair Display',serif;font-size:2rem;color:#fff;display:block}
+.stat-l{font-size:12px;color:rgba(255,255,255,.7);margin-top:3px;display:block}
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
+@media(max-width:640px){.steps-row{grid-template-columns:1fr}}
+.step-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:24px;position:relative}
+.step-n{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800;color:var(--blue-light);position:absolute;top:12px;right:16px;line-height:1}
+.step-card h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.step-card p{font-size:13px;color:var(--ink-2);line-height:1.6}
+.blog-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px;margin-bottom:48px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+.blog-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;color:var(--ink);transition:all .22s;display:flex;flex-direction:column}
+.blog-card:hover{border-color:var(--blue-2);transform:translateY(-3px);box-shadow:var(--shadow)}
+.blog-card.featured{grid-row:span 2}
+@media(max-width:900px){.blog-card.featured{grid-row:span 1}}
+.blog-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.blog-card.featured .blog-thumb{height:200px;font-size:4rem}
+.blog-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:8px}
+.blog-tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 9px;border-radius:100px;width:fit-content}
+.blog-card h3{font-family:'Playfair Display',serif;font-size:1rem;line-height:1.35}
+.blog-card.featured h3{font-size:1.25rem}
+.blog-card p{font-size:13px;color:var(--ink-2);line-height:1.6;flex:1}
+.blog-cta{font-size:12px;font-weight:700;color:var(--blue);margin-top:4px}
+.rate-item{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--bg);border-radius:8px;margin-bottom:8px}
+.rate-name{font-size:13px;font-weight:500}
+.rate-val{font-size:14px;font-weight:700;color:var(--blue)}
+.rate-badge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:100px}
+.rate-up{background:#fee2e2;color:var(--red)}
+.rate-down{background:var(--green-light);color:var(--green)}
+.tip-item{display:flex;gap:10px;font-size:13px;color:var(--ink-2);line-height:1.5;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/" class="logo"><span class="logo-mark"><svg width="26" height="26" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="13" stroke="#22c55e" stroke-width="2" fill="#0f2a4a"/><text x="14" y="13" text-anchor="middle" fill="#fff" font-family="Arial Black,sans-serif" font-weight="900" font-size="7.5">FM</text><rect x="8" y="15.5" width="3" height="5" rx="0.5" fill="#22c55e"/><rect x="12.5" y="13" width="3" height="7.5" rx="0.5" fill="#22c55e"/><path d="M16 17 Q20 12 22 10" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" fill="none"/><polygon points="22,8 24,11 21,11" fill="#22c55e"/></svg></span><span class="logo-text">Fincal<span>Max</span></span></a>
+  <nav class="nav-links">
+    <a href="calculators/index.html">Calculators</a>
+    <a href="articles/index.html">Articles</a>
+    <a href="pages/about.html">About</a>
+    <a href="pages/contact.html">Contact</a>
+    <a href="blog/index.html">Blog</a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-sw" style="display:none">
+      <button class="lang-btn active" id="btnEN">🇺🇸 EN</button>
+      
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false" onclick="document.getElementById('mm').classList.toggle('open')">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+<div class="mobile-menu" id="mm">
+  <a href="calculators/index.html">🧮 All Calculators</a>
+  <a href="calculators/mortgage-calculator.html">🏠 Mortgage</a>
+  <a href="calculators/refinance-calculator.html">🔄 Refinance</a>
+  <a href="articles/index.html">📚 Articles</a>
+  <a href="blog/index.html">✍️ Blog</a>
+  <a href="pages/about.html">👤 About</a>
+  <a href="pages/contact.html">📬 Contact</a>
+</div>
+
+<!-- TOP AD -->
+<div class="ad-strip"><div class="ad-block ad-728">Advertisement · 728×90</div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"><div class="hero-grid-bg"></div><div class="hero-glow"></div></div>
+  <div class="hero-grid-home">
+    <div class="fade-up">
+      <div class="hero-tag"><span class="hero-dot"></span><span id="heroTag">Smart financial tools for better decisions</span></div>
+      <h1 id="heroH1">Smart Financial<br>Calculators &<br><em>Tools</em></h1>
+      <p class="hero-sub" id="heroSub">Powerful, easy-to-use tools to help you make smarter financial decisions. No sign-up. No fees. Forever free.</p>
+      <div class="hero-search" style="position:relative">
+        <input type="text" id="heroSearchInput" placeholder="Search for a calculator..." aria-label="Search for a calculator" autocomplete="off">
+        <button id="heroSearchBtn" type="button">Search</button>
+        <div id="searchResults" class="search-results"></div>
+      </div>
+      <div class="hero-pills">
+        <a href="calculators/mortgage-calculator.html" class="pill">Mortgage</a>
+        <a href="calculators/refinance-calculator.html" class="pill">Refinance</a>
+        <a href="calculators/affordability-calculator.html" class="pill">Affordability</a>
+        <a href="calculators/pmi-calculator.html" class="pill">PMI</a>
+        <a href="calculators/rent-vs-buy-calculator.html" class="pill">Rent vs Buy</a>
+      </div>
+    </div>
+    <div class="hero-card-home fade-up">
+      <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px" id="qcTitle">⚡ Quick Mortgage Estimate</div>
+      <div class="qc-label">Home Price</div>
+      <input class="qc-input" type="number" id="qcPrice" value="400000" aria-label="Home Price" min="0">
+      <div class="qc-label">Down Payment %</div>
+      <input class="qc-input" type="number" id="qcDown" value="20" aria-label="Down Payment Percent" min="0" max="100">
+      <div class="qc-label">Interest Rate %</div>
+      <input class="qc-input" type="number" id="qcRate" value="6.85" step="0.01" aria-label="Interest Rate Percent" min="0">
+      <button class="qc-btn" id="qcBtn" onclick="quickCalc()">Calculate Payment</button>
+      <div class="qc-result" id="qcResult" role="status">
+        <div class="qc-val" id="qcVal">$0</div>
+        <div class="qc-lbl" id="qcLbl">Estimated monthly payment (30-yr)</div>
+      </div>
+      <a href="calculators/mortgage-calculator.html" id="qcLink" style="display:block;text-align:center;font-size:12px;color:rgba(255,255,255,.4);margin-top:8px">Full calculator →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">✅ <span id="trust1">100% Free · No sign-up</span></div>
+    <div class="trust-item">🎯 <span id="trust2">Bank-grade accuracy</span></div>
+    <div class="trust-item">🔒 <span id="trust3">Your data stays private</span></div>
+    <div class="trust-item">📱 <span id="trust4">Works on all devices</span></div>
+
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- REAL ESTATE CALCULATORS -->
+  <div class="sec-hdr"><h2 class="sec-title" style="font-family:'Playfair Display',serif;font-size:1.7rem">🏠 Real Estate Calculators</h2><a href="calculators/index.html" class="sec-link" id="viewAll">View all →</a></div>
+  <div class="calc-grid">
+    <a href="calculators/mortgage-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#eff6ff">🏠</div><div class="tile-name">Mortgage Calculator</div><div class="tile-desc">Monthly payment with taxes & insurance</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/refinance-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#ecfdf5">🔄</div><div class="tile-name">Refinance Calculator</div><div class="tile-desc">See how much you could save</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/affordability-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fffbeb">💰</div><div class="tile-name">Affordability</div><div class="tile-desc">How much house can you afford?</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/amortization-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fef2f2">📊</div><div class="tile-name">Amortization</div><div class="tile-desc">Full payment schedule by year</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/rent-vs-buy-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f5f3ff">🏘️</div><div class="tile-name">Rent vs. Buy</div><div class="tile-desc">Which makes more sense?</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/home-equity-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#e0f2fe">📈</div><div class="tile-name">Home Equity</div><div class="tile-desc">Calculate equity in your home</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/down-payment-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#dcfce7">🔑</div><div class="tile-name">Down Payment</div><div class="tile-desc">Plan your savings timeline</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/closing-costs-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fff7ed">📋</div><div class="tile-name">Closing Costs</div><div class="tile-desc">Estimate fees when buying</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/pmi-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fdf4ff">🛡️</div><div class="tile-name">PMI Calculator</div><div class="tile-desc">Estimate mortgage insurance</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/debt-to-income-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f0fdf4">💳</div><div class="tile-name">Debt-to-Income</div><div class="tile-desc">Check your DTI ratio</div><div class="tc">Calculate →</div></a>
+  </div>
+
+  <div class="sec-hdr"><h2 class="sec-title" style="font-family:'Playfair Display',serif;font-size:1.7rem">🆕 Loans, Retirement, Taxes & Budgeting</h2><a href="calculators/index.html" class="sec-link">All 37+ calculators →</a></div>
+  <div class="calc-grid">
+    <a href="calculators/auto-loan-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#eff6ff">🚗</div><div class="tile-name">Auto Loan</div><div class="tile-desc">Car payment with tax & trade-in</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/student-loan-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fff7ed">🎓</div><div class="tile-name">Student Loan</div><div class="tile-desc">Payment & payoff timeline</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/401k-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f0fdf4">📈</div><div class="tile-name">401(k)</div><div class="tile-desc">Project your retirement balance</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/paycheck-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f0fdf4">💰</div><div class="tile-name">Paycheck</div><div class="tile-desc">Take-home pay after tax & FICA</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/income-tax-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#eff6ff">🧾</div><div class="tile-name">Income Tax</div><div class="tile-desc">2026 federal tax estimate</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/credit-card-payoff-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fef2f2">💳</div><div class="tile-name">Credit Card Payoff</div><div class="tile-desc">Time & interest to pay off debt</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/debt-payoff-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#fdf4ff">📉</div><div class="tile-name">Debt Payoff</div><div class="tile-desc">Snowball vs. avalanche</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/budget-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#ecfeff">📊</div><div class="tile-name">Budget (50/30/20)</div><div class="tile-desc">Needs, wants & savings split</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/savings-goal-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f0fdfa">🎯</div><div class="tile-name">Savings Goal</div><div class="tile-desc">Time to hit your target</div><div class="tc">Calculate →</div></a>
+    <a href="calculators/net-worth-calculator.html" class="calc-tile"><div class="tile-icon" style="background:#f8fafc">📋</div><div class="tile-name">Net Worth</div><div class="tile-desc">Assets minus liabilities</div><div class="tc">Calculate →</div></a>
+  </div>
+
+  <!-- AD -->
+  <div class="ad-center"><div class="ad-block ad-728">Advertisement · 728×90</div></div>
+
+  <!-- HOW IT WORKS -->
+  <div class="sec-hdr"><h2 class="sec-title" id="howTitle" style="font-family:'Playfair Display',serif;font-size:1.7rem">How It Works</h2></div>
+  <div class="steps-row">
+    <div class="step-card"><div class="step-n">01</div><h3 id="sh1">Choose a Calculator</h3><p id="sp1">Pick from mortgage, refinance, PMI, and more. Each calculator is purpose-built for accuracy.</p></div>
+    <div class="step-card"><div class="step-n">02</div><h3 id="sh2">Enter Your Numbers</h3><p id="sp2">Fill in your home price, rate, and term. Smart defaults get you started instantly.</p></div>
+    <div class="step-card"><div class="step-n">03</div><h3 id="sh3">Get Instant Results</h3><p id="sp3">See your monthly payment, total cost, and full schedule in seconds. No waiting.</p></div>
+  </div>
+
+  <!-- CONTENT + SIDEBAR -->
+  <div class="two-col">
+    <div>
+      <!-- BLOG -->
+      <div class="sec-hdr"><h2 class="sec-title" id="blogTitle" style="font-family:'Playfair Display',serif;font-size:1.7rem">Latest Mortgage Guides</h2><a href="articles/index.html" class="sec-link" id="allArticles">All articles →</a></div>
+      <div class="blog-grid">
+        <a href="articles/best-mortgage-rate-2026.html" class="blog-card featured">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#0a2d54,#16a34a)">🏠</div>
+          <div class="blog-body">
+            <span class="blog-tag" style="background:#f0fdf4;color:#16a34a">Mortgage</span>
+            <h3>How to Get the Best Mortgage Rate in 2026</h3>
+            <p>Your credit score, down payment, and loan type all play a major role. Here's how to get the lowest possible rate.</p>
+            <div class="blog-cta">Read More →</div>
+          </div>
+        </a>
+        <a href="articles/should-i-refinance-2026.html" class="blog-card">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#064e3b,#059669)">🔄</div>
+          <div class="blog-body">
+            <span class="blog-tag" style="background:#ecfdf5;color:#059669">Refinance</span>
+            <h3>Should You Refinance in 2026?</h3>
+            <p>We break down when refinancing makes sense and when it doesn't.</p>
+            <div class="blog-cta">Read More →</div>
+          </div>
+        </a>
+        <a href="articles/first-time-homebuyer-guide.html" class="blog-card">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#78350f,#f59e0b)">🏡</div>
+          <div class="blog-body">
+            <span class="blog-tag" style="background:#fffbeb;color:#b45309">First-Time Buyer</span>
+            <h3>First-Time Homebuyer Guide 2026</h3>
+            <p>Step-by-step from saving your down payment to getting your keys.</p>
+            <div class="blog-cta">Read More →</div>
+          </div>
+        </a>
+        <a href="articles/15-vs-30-year-mortgage.html" class="blog-card">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#312e81,#7c3aed)">📊</div>
+          <div class="blog-body">
+            <span class="blog-tag" style="background:#f5f3ff;color:#7c3aed">Strategy</span>
+            <h3>15-Year vs 30-Year Mortgage</h3>
+            <p>The math might surprise you. A full comparison across income levels.</p>
+            <div class="blog-cta">Read More →</div>
+          </div>
+        </a>
+        <a href="articles/rent-vs-buy-2026.html" class="blog-card">
+          <div class="blog-thumb" style="background:linear-gradient(135deg,#7f1d1d,#dc2626)">🏘️</div>
+          <div class="blog-body">
+            <span class="blog-tag" style="background:#fef2f2;color:#dc2626">Renting</span>
+            <h3>Rent vs. Buy in 2026: The Honest Comparison</h3>
+            <p>Is buying still worth it when rates are elevated?</p>
+            <div class="blog-cta">Read More →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="ad-center" style="padding:0"><div class="ad-block ad-300">Advertisement · 300×250</div></div>
+      <div class="card">
+        <div class="card-title" id="ratesTitle">📊 Today's Avg Rates</div>
+        <div id="ratesTitle" style="display:none">ratesTitle</div>
+        <div class="rate-item"><span class="rate-name">30-yr Fixed</span><div style="display:flex;align-items:center;gap:8px"><span class="rate-val">6.85%</span><span class="rate-badge rate-up">▲0.04</span></div></div>
+        <div class="rate-item"><span class="rate-name">15-yr Fixed</span><div style="display:flex;align-items:center;gap:8px"><span class="rate-val">6.12%</span><span class="rate-badge rate-down">▼0.02</span></div></div>
+        <div class="rate-item"><span class="rate-name">5/1 ARM</span><div style="display:flex;align-items:center;gap:8px"><span class="rate-val">6.44%</span><span class="rate-badge rate-up">▲0.01</span></div></div>
+        <div class="rate-item"><span class="rate-name">FHA Loan</span><div style="display:flex;align-items:center;gap:8px"><span class="rate-val">6.60%</span><span class="rate-badge rate-down">▼0.03</span></div></div>
+        <p style="font-size:11px;color:var(--ink-3);margin-top:10px">Reference only. Contact lenders for official quotes.</p>
+      </div>
+      <div class="card">
+        <div class="card-title" id="tipsTitle">💡 Buyer Tips</div>
+        <div class="tip-item">📉 <span>A 1% lower rate saves ~$50k on a $400k loan over 30 years.</span></span></div>
+        <div class="tip-item">💵 <span>20% down avoids PMI and lowers your payment.</span></span></div>
+        <div class="tip-item">📊 <span>Keep housing under 28% of gross monthly income.</span></span></div>
+        <div class="tip-item">⏱️ <span>A 15-yr mortgage cuts total interest by nearly half.</span></span></div>
+      </div>
+      <div class="ad-center" style="padding:0"><div class="ad-block ad-300">Advertisement · 300×250</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div><span class="footer-brand">🧮 FincalMax</span><div class="footer-desc"><span id="footerDesc">Free, accurate financial calculators for mortgage, real estate, and more.</span></div></div>
+    <div class="footer-col">
+      <div class="footer-col-title">Calculators</div>
+      <a href="calculators/mortgage-calculator.html">Mortgage</a>
+      <a href="calculators/refinance-calculator.html">Refinance</a>
+      <a href="calculators/affordability-calculator.html">Affordability</a>
+      <a href="calculators/pmi-calculator.html">PMI</a>
+      <a href="calculators/index.html">All Calculators →</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Articles</div>
+      <a href="articles/index.html">All Articles</a>
+      <a href="articles/best-mortgage-rate-2026.html">Best Mortgage Rate</a>
+      <a href="articles/first-time-homebuyer-guide.html">First-Time Buyer</a>
+      <a href="articles/should-i-refinance-2026.html">Should I Refinance?</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="pages/about.html">About Us</a>
+      <a href="pages/contact.html">Contact</a>
+    <a href="blog/index.html">Blog</a>
+      <a href="pages/privacy-policy.html">Privacy Policy</a>
+      <a href="pages/terms.html">Terms of Service</a>
+      <a href="pages/disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span><span id="copyright">© 2026 FincalMax.com · For informational purposes only · Not financial advice</span></span>
+    <div class="footer-links">
+      <a href="pages/privacy-policy.html">Privacy</a>
+      <a href="pages/terms.html">Terms</a>
+      <a href="pages/contact.html">Contact</a>
+    <a href="blog/index.html">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── QUICK CALC ──
+function parseNum(v){
+  if (v === null || v === undefined) return NaN;
+  return parseFloat(String(v).trim().replace(',', '.'));
+}
+function quickCalc() {
+  const priceInput = document.getElementById('qcPrice');
+  const downInput = document.getElementById('qcDown');
+  const rateInput = document.getElementById('qcRate');
+
+  let price = parseNum(priceInput.value);
+  if (!isFinite(price) || price <= 0) price = 400000;
+
+  let down = parseNum(downInput.value);
+  if (!isFinite(down)) down = 20;
+  down = Math.min(Math.max(down, 0), 100); // clamp 0–100%
+
+  let rate = parseNum(rateInput.value);
+  if (!isFinite(rate) || rate < 0) rate = 6.85;
+
+  // reflect the corrected values back so the user can see what was actually used
+  downInput.value = down;
+  rateInput.value = rate;
+
+  const loan = price * (1 - down / 100);
+  const r = rate / 100 / 12, n = 360;
+  const pi = r === 0 ? loan / n : loan * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  const total = pi + (price * 0.012 / 12) + (price * 0.003 / 12);
+  document.getElementById('qcVal').textContent = '$' + Math.round(total).toLocaleString('en-US');
+  document.getElementById('qcResult').classList.add('show');
+}
+['qcPrice','qcDown','qcRate'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); quickCalc(); } });
+});
+
+// ── SEARCH ──
+const CALCS = [
+  {name:"Mortgage Calculator", url:"calculators/mortgage-calculator.html", icon:"🏠", kw:"mortgage home loan monthly payment piti house price interest"},
+  {name:"FHA Loan Calculator", url:"calculators/fha-loan-calculator.html", icon:"🏛️", kw:"fha loan mip low credit first time buyer"},
+  {name:"VA Loan Calculator", url:"calculators/va-loan-calculator.html", icon:"🇺🇸", kw:"va loan veteran military zero down funding fee"},
+  {name:"USDA Loan Calculator", url:"calculators/usda-loan-calculator.html", icon:"🌾", kw:"usda loan rural zero down"},
+  {name:"Refinance Calculator", url:"calculators/refinance-calculator.html", icon:"🔄", kw:"refinance refi break even savings rate"},
+  {name:"Mortgage Payoff Calculator", url:"calculators/mortgage-payoff-calculator.html", icon:"💰", kw:"payoff extra payment early payoff mortgage"},
+  {name:"APR Calculator", url:"calculators/apr-calculator.html", icon:"📊", kw:"apr annual percentage rate fees true cost"},
+  {name:"HELOC Calculator", url:"calculators/heloc-calculator.html", icon:"📋", kw:"heloc home equity line of credit"},
+  {name:"Affordability Calculator", url:"calculators/affordability-calculator.html", icon:"💰", kw:"affordability afford how much house can i budget income"},
+  {name:"Down Payment Calculator", url:"calculators/down-payment-calculator.html", icon:"🔑", kw:"down payment savings plan timeline"},
+  {name:"Closing Costs Calculator", url:"calculators/closing-costs-calculator.html", icon:"📋", kw:"closing costs fees buying selling"},
+  {name:"PMI Calculator", url:"calculators/pmi-calculator.html", icon:"🛡️", kw:"pmi private mortgage insurance"},
+  {name:"Rent vs. Buy Calculator", url:"calculators/rent-vs-buy-calculator.html", icon:"🏘️", kw:"rent vs buy lease rent or buy"},
+  {name:"Property Tax Calculator", url:"calculators/property-tax-calculator.html", icon:"🏛️", kw:"property tax annual monthly assessment"},
+  {name:"Debt-to-Income Calculator", url:"calculators/debt-to-income-calculator.html", icon:"💳", kw:"debt to income dti ratio lender"},
+  {name:"Amortization Schedule", url:"calculators/amortization-calculator.html", icon:"📊", kw:"amortization schedule payment breakdown year by year"},
+  {name:"Investment Property Calculator", url:"calculators/investment-property-calculator.html", icon:"🏢", kw:"investment property roi return cash flow"},
+  {name:"Rental Property Calculator", url:"calculators/rental-property-calculator.html", icon:"🏘️", kw:"rental property cash flow yield landlord"},
+  {name:"Cash Flow Calculator", url:"calculators/cash-flow-calculator.html", icon:"💵", kw:"cash flow net income expenses"},
+  {name:"Cap Rate Calculator", url:"calculators/cap-rate-calculator.html", icon:"📈", kw:"cap rate capitalization investment"},
+  {name:"House Flipping Calculator", url:"calculators/house-flipping-calculator.html", icon:"🔨", kw:"house flipping flip fix and flip profit roi"},
+  {name:"Home Equity Calculator", url:"calculators/home-equity-calculator.html", icon:"📈", kw:"home equity ltv loan to value"},
+  {name:"Auto Loan Calculator", url:"calculators/auto-loan-calculator.html", icon:"🚗", kw:"auto loan car loan vehicle payment trade-in"},
+  {name:"Personal Loan Calculator", url:"calculators/personal-loan-calculator.html", icon:"💵", kw:"personal loan payment interest origination fee"},
+  {name:"Student Loan Calculator", url:"calculators/student-loan-calculator.html", icon:"🎓", kw:"student loan college payment extra payment"},
+  {name:"401(k) Calculator", url:"calculators/401k-calculator.html", icon:"📈", kw:"401k retirement employer match contribution"},
+  {name:"IRA Calculator", url:"calculators/ira-calculator.html", icon:"🏦", kw:"ira roth traditional retirement"},
+  {name:"Compound Interest Calculator", url:"calculators/compound-interest-calculator.html", icon:"📊", kw:"compound interest investment growth savings"},
+  {name:"Retirement Savings Calculator", url:"calculators/retirement-calculator.html", icon:"🌅", kw:"retirement savings nest egg how much need"},
+  {name:"Paycheck Calculator", url:"calculators/paycheck-calculator.html", icon:"💰", kw:"paycheck take home pay salary fica tax"},
+  {name:"Income Tax Calculator", url:"calculators/income-tax-calculator.html", icon:"🧾", kw:"income tax federal bracket estimate"},
+  {name:"Credit Card Payoff Calculator", url:"calculators/credit-card-payoff-calculator.html", icon:"💳", kw:"credit card payoff debt apr"},
+  {name:"Debt Payoff Calculator", url:"calculators/debt-payoff-calculator.html", icon:"📉", kw:"debt payoff snowball avalanche"},
+  {name:"Budget Calculator", url:"calculators/budget-calculator.html", icon:"📊", kw:"budget 50 30 20 rule needs wants savings"},
+  {name:"Tip Calculator", url:"calculators/tip-calculator.html", icon:"🧾", kw:"tip calculator split bill restaurant"},
+  {name:"Savings Goal Calculator", url:"calculators/savings-goal-calculator.html", icon:"🎯", kw:"savings goal target how long"},
+  {name:"Net Worth Calculator", url:"calculators/net-worth-calculator.html", icon:"📋", kw:"net worth assets liabilities"}
+];
+
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function searchCalcs(q) {
+  q = q.trim().toLowerCase();
+  if (!q) return [];
+  const words = q.split(/\s+/).filter(Boolean);
+  return CALCS
+    .map(c => ({c, hay: (c.name + ' ' + c.kw).toLowerCase()}))
+    .filter(({hay}) => words.every(w => hay.includes(w)))
+    .map(({c}) => c);
+}
+
+let searchActiveIndex = -1;
+const searchInputEl = document.getElementById('heroSearchInput');
+const searchBoxEl = document.getElementById('searchResults');
+
+function renderSearchResults(query) {
+  searchActiveIndex = -1;
+  const list = searchCalcs(query);
+  if (!query.trim()) { searchBoxEl.classList.remove('show'); searchBoxEl.innerHTML = ''; return; }
+  if (list.length === 0) {
+    searchBoxEl.innerHTML = '<div class="sr-empty">No calculator found for "' + escapeHtml(query) + '". Try "mortgage", "refinance", "rent vs buy"...</div>';
+  } else {
+    searchBoxEl.innerHTML = list.slice(0, 8).map(c =>
+      '<a href="' + c.url + '">' + c.icon + ' ' + escapeHtml(c.name) + '</a>'
+    ).join('');
+  }
+  searchBoxEl.classList.add('show');
+}
+
+if (searchInputEl) {
+  searchInputEl.addEventListener('input', () => renderSearchResults(searchInputEl.value));
+  searchInputEl.addEventListener('focus', () => { if (searchInputEl.value.trim()) renderSearchResults(searchInputEl.value); });
+  searchInputEl.addEventListener('keydown', e => {
+    const items = Array.from(searchBoxEl.querySelectorAll('a'));
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (items.length) { searchActiveIndex = Math.min(searchActiveIndex + 1, items.length - 1); items.forEach((it,i)=>it.classList.toggle('active', i===searchActiveIndex)); items[searchActiveIndex].scrollIntoView({block:'nearest'}); }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (items.length) { searchActiveIndex = Math.max(searchActiveIndex - 1, 0); items.forEach((it,i)=>it.classList.toggle('active', i===searchActiveIndex)); items[searchActiveIndex].scrollIntoView({block:'nearest'}); }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (searchActiveIndex >= 0 && items[searchActiveIndex]) {
+        window.location.href = items[searchActiveIndex].getAttribute('href');
+      } else {
+        const list = searchCalcs(searchInputEl.value);
+        if (list.length) window.location.href = list[0].url;
+        else renderSearchResults(searchInputEl.value);
+      }
+    } else if (e.key === 'Escape') {
+      searchBoxEl.classList.remove('show');
+    }
+  });
+}
+const searchBtnEl = document.getElementById('heroSearchBtn');
+if (searchBtnEl) {
+  searchBtnEl.addEventListener('click', () => {
+    const list = searchCalcs(searchInputEl.value);
+    if (list.length) window.location.href = list[0].url;
+    else renderSearchResults(searchInputEl.value);
+  });
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.hero-search')) searchBoxEl.classList.remove('show');
+});
+
+// ── MOBILE MENU ──
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mm');
+  if(m&&!m.contains(e.target)&&!e.target.closest('.hamburger'))m.classList.remove('open');
+});
+
+</script>
+</body>
+</html>
