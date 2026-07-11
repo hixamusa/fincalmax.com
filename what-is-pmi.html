@@ -1,42 +1,11 @@
-backend:
-  name: git-gateway
-  branch: main
-
-# After publishing, Decap commits straight to GitHub. Netlify then runs
-# `node build-blog.js` (configured in netlify.toml) automatically, which
-# turns this content into posts.json + a real <slug>.html page — no manual
-# file uploads, ever.
-publish_mode: simple
-media_folder: "uploads"
-public_folder: "/uploads"
-
-collections:
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "blog/content"
-    create: true
-    delete: true
-    slug: "{{slug}}"
-    extension: "json"
-    format: "json"
-    summary: "{{title}} — {{date}}"
-    sortableFields: ["date", "title"]
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug (URL-friendly, e.g. should-i-refinance-2026)", name: "slug", widget: "string", pattern: ['^[a-z0-9-]+$', "Lowercase letters, numbers, and hyphens only"] }
-      - { label: "Short Description (used in cards & meta description)", name: "desc", widget: "text" }
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        options: ["Mortgage", "Refinance", "Loans", "Retirement", "Budgeting", "Real Estate", "Tax", "Strategy"]
-      - { label: "Emoji (used as the card icon)", name: "emoji", widget: "string", default: "📝" }
-      - { label: "Card Background Color (hex)", name: "bg", widget: "string", default: "#e8f0fb" }
-      - { label: "Publish Date", name: "date", widget: "datetime", format: "MMMM D, YYYY", date_format: "MMMM D, YYYY", time_format: false }
-      - { label: "Author", name: "author", widget: "string", default: "FincalMax Editorial Team" }
-      - { label: "SEO Title (optional — falls back to Title)", name: "metaTitle", widget: "string", required: false }
-      - { label: "SEO Description (optional — falls back to Short Description)", name: "metaDesc", widget: "text", required: false }
-      - { label: "SEO Keywords (optional, comma-separated)", name: "keywords", widget: "string", required: false }
-      - label: "Content (HTML)"
-        name: "content"
-        widget: "text"
-        hint: "Write the article body as HTML — e.g. <h2>Heading</h2><p>Paragraph</p>. Three ad slots (top, middle, bottom) are inserted automatically — don't add your own ad code here."
+{
+  "name": "FincalMax",
+  "short_name": "FincalMax",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0d3b6e",
+  "background_color": "#0d3b6e",
+  "display": "standalone"
+}
